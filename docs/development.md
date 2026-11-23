@@ -17,6 +17,8 @@
 | `tests/Toolbelt.Blazor.Prismazor.Test/Fixtures/<language ID>/` | The input `*.txt` and the PrismJS output `*.expected.html` |
 | `tests/Toolbelt.Blazor.Prismazor.Test/AllLanguages/` | The output of PrismJS (`expected.json`) when the same input (`sample.txt`) is given to all languages |
 | `samples/SampleApp/` | A Blazor Web App (Server and Client) to check the behavior |
+| `samples/HomePage/` | The home page of the library, a Blazor WebAssembly standalone app for GitHub Pages (net11.0). The `gh-pages.yml` workflow publishes it. |
+| `.assets/nupkg-icon.png` | The package icon. The home page shows it too. |
 
 ## Add a language, or update PrismJS
 
@@ -52,3 +54,17 @@ dotnet run
 - The sample app targets net11.0.
 - `/` is static SSR, `/server` is Interactive Server, and `/wasm` is Interactive WebAssembly.
 - The theme switches between `prism.min.css` and `prism-tomorrow.min.css` by `prefers-color-scheme`.
+
+## Home page
+
+```
+cd samples/HomePage
+dotnet run
+```
+
+- It is a Blazor WebAssembly standalone app, and the GitHub Pages workflow publishes it with `-p:GHPages=true`.
+- BlazorWasmPreRendering.Build prerenders it into static HTML at publish time, with no loading screen. The controls (the language list, the theme radio buttons, the Copy buttons, and the color mode switch) are disabled until the first `OnAfterRender`, so they look disabled in the prerendered HTML. See `InteractiveComponentBase`.
+- The services are registered in the `ConfigureServices` local function of `Program.cs`, because the prerendering calls it by that name.
+- The color mode (auto, light, or dark) is kept in the local storage. The page uses only the built-in functions of the browser for it, so there is no JavaScript file. The only script is a short one in `index.html`, which applies the saved mode before the first paint.
+- The theme CSS file of the code blocks is loaded by the layout, and the playground changes it. So all the code blocks on the page follow the selected theme.
+- The fonts are the same as the ones of the ASP.NET Core home page (Open Sans and Space Grotesk), and they are hosted in `wwwroot/fonts` under the SIL Open Font License.

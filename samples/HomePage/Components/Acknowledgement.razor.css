@@ -1,0 +1,36 @@
+.acknowledgement {
+    padding: 0 0 4rem;
+    background: var(--bg);
+}
+
+/* A gradient border made of two backgrounds, so that the card stands out right below the hero. */
+.card {
+    padding: 2rem 2.25rem;
+    border: 2px solid transparent;
+    border-radius: .75rem;
+    background:
+        linear-gradient(var(--bg-2), var(--bg-2)) padding-box,
+        var(--gradient) border-box;
+}
+
+.card p {
+    max-width: 52rem;
+}
+
+.thanks {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 575px) {
+    .card {
+        padding: 1.5rem 1.25rem;
+    }
+}

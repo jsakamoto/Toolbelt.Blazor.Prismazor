@@ -1,0 +1,31 @@
+.copyable {
+    position: relative;
+}
+
+.copyable ::deep pre {
+    margin: 0;
+    padding-right: 5rem;
+}
+
+/* The button sits on the code block, whose colors come from the selected theme, not from the page.
+   So it has its own solid colors, which keep the contrast on any theme in both color modes. */
+.copy-button {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    padding: .2rem .7rem;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    background: var(--bg-2);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.copy-button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}

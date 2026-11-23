@@ -11,5 +11,6 @@
   <Folder Name="/samples/">
     <Project Path="samples/SampleApp/SampleApp/SampleApp.csproj" />
     <Project Path="samples/SampleApp/SampleApp.Client/SampleApp.Client.csproj" />
+    <Project Path="samples/HomePage/HomePage.csproj" />
   </Folder>
 </Solution>

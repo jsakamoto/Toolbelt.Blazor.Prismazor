@@ -1,0 +1,30 @@
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <img class="hero-icon" src="nupkg-icon.png" alt="" width="72" height="72" />
+            <h1>
+                <span class="gradient-text">Prismazor</span> is a faithful port of Prism.js to Blazor
+            </h1>
+            <p class="lead">
+                It highlights your code in pure C#. It has no JavaScript at all, and it makes the same HTML as Prism.js.
+                So the highlighted code is already in the first response from the server.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#get-started">Get started</a>
+                <a class="btn btn-outline" href="#try-it">Try it</a>
+                <a class="btn btn-outline with-icon" href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor"><BrandIcon Kind="BrandIconKind.GitHub" />View on GitHub</a>
+            </div>
+        </div>
+        <div class="hero-code" aria-label="An example of the CodeBlock component">
+            <CodeBlock Code="@sample" Language="@PrismazorLanguages.Cshtml" />
+        </div>
+    </div>
+</section>
+
+@code {
+    private const string sample = """
+        @* Highlighted when the component is rendered. *@
+        <CodeBlock Code="@code"
+                   Language="@PrismazorLanguages.CSharp" />
+        """;
+}

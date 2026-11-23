@@ -1,0 +1,123 @@
+@inherits InteractiveComponentBase
+@implements IDisposable
+@inject ThemeState ThemeState
+@inject IJSRuntime JS
+
+<section id="try-it" class="section">
+    <div class="container">
+        <h2>Try it</h2>
+        <p class="lead">
+            Pick a language and a theme. The preview is highlighted by Prismazor right in your browser,
+            and you can copy the code that makes the same result.
+        </p>
+
+        <div class="playground">
+            <div class="controls">
+                <div class="field">
+                    <label for="language-select">Language</label>
+                    <select id="language-select" disabled="@(!this.IsInteractive)" @onchange="this.OnLanguageChangedAsync">
+                        @foreach (var language in PlaygroundLanguage.All)
+                        {
+                            <option value="@language.PropertyName" selected="@(language == this.language)">@language.DisplayName</option>
+                        }
+                    </select>
+                    <p class="field-note">
+                        Here you can pick from @PlaygroundLanguage.All.Count popular languages. Prismazor itself supports
+                        <a href="https://prismjs.com/#supported-languages">all 288 languages of Prism.js</a>.
+                    </p>
+                </div>
+
+                <fieldset class="theme-picker">
+                    <legend>Theme</legend>
+                    @foreach (var theme in PrismTheme.All)
+                    {
+                        var currentTheme = theme;
+                        <label class="theme-option">
+                            <input type="radio"
+                                   name="prism-theme"
+                                   value="@currentTheme.Id"
+                                   checked="@(currentTheme == this.ThemeState.Theme)"
+                                   disabled="@(!this.IsInteractive)"
+                                   @onchange="() => this.OnThemeSelectedAsync(currentTheme)" />
+                            <span>@currentTheme.DisplayName</span>
+                        </label>
+                    }
+                </fieldset>
+            </div>
+
+            <div class="preview">
+                <CodeBlock Code="@this.language.Code" Language="@this.language.Grammar" />
+            </div>
+        </div>
+
+        <div class="usage">
+            <h3>1. Add the theme CSS file</h3>
+            <CopyableCode Code="@this.CssSnippet" Grammar="@PrismazorLanguages.Markup" />
+
+            <h3>2. Use the CodeBlock component</h3>
+            <CopyableCode Code="@this.RazorSnippet" Grammar="@PrismazorLanguages.Cshtml" />
+        </div>
+    </div>
+</section>
+
+@code {
+    private const string LanguageStorageKey = "prismazor-playground-language";
+
+    private const string ThemeStorageKey = "prismazor-playground-theme";
+
+    private PlaygroundLanguage language = PlaygroundLanguage.Default;
+
+    private string CssSnippet => $"""<link rel="stylesheet" href="{this.ThemeState.Theme.Href}" />""";
+
+    private string RazorSnippet => $"""<CodeBlock Code="@code" Language="@PrismazorLanguages.{this.language.PropertyName}" />""";
+
+    protected override void OnInitialized() => this.ThemeState.Changed += this.OnThemeChanged;
+
+    // The last language and theme are restored when the page becomes interactive. The prerendered page shows the defaults.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        var languageName = await this.GetItemAsync(LanguageStorageKey);
+        if (PlaygroundLanguage.All.FirstOrDefault(l => l.PropertyName == languageName) is { } savedLanguage)
+        {
+            this.language = savedLanguage;
+            this.StateHasChanged();
+        }
+
+        var themeId = await this.GetItemAsync(ThemeStorageKey);
+        if (PrismTheme.All.FirstOrDefault(t => t.Id == themeId) is { } savedTheme)
+        {
+            this.ThemeState.Select(savedTheme);
+        }
+    }
+
+    private void OnThemeChanged() => this.InvokeAsync(this.StateHasChanged);
+
+    private async Task OnLanguageChangedAsync(ChangeEventArgs e)
+    {
+        this.language = PlaygroundLanguage.All.First(l => l.PropertyName == (string?)e.Value);
+        await this.SetItemAsync(LanguageStorageKey, this.language.PropertyName);
+    }
+
+    private async Task OnThemeSelectedAsync(PrismTheme theme)
+    {
+        this.ThemeState.Select(theme);
+        await this.SetItemAsync(ThemeStorageKey, theme.Id);
+    }
+
+    // The local storage is used through the built-in functions of the browser. It may be blocked, and then nothing is saved.
+    private async Task<string?> GetItemAsync(string key)
+    {
+        try { return await this.JS.InvokeAsync<string?>("localStorage.getItem", key); }
+        catch (JSException) { return null; }
+    }
+
+    private async Task SetItemAsync(string key, string value)
+    {
+        try { await this.JS.InvokeVoidAsync("localStorage.setItem", key, value); }
+        catch (JSException) { }
+    }
+
+    public void Dispose() => this.ThemeState.Changed -= this.OnThemeChanged;
+}

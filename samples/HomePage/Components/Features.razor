@@ -1,0 +1,69 @@
+<section id="features" class="section section-alt">
+    <div class="container">
+        <h2>What is Prismazor?</h2>
+        <p class="lead">
+            Prismazor is a syntax highlighting component for Blazor. It is a C# port of <a class="with-icon" href="https://prismjs.com/"><BrandIcon Kind="BrandIconKind.PrismJs" />Prism.js</a>,
+            one of the most popular syntax highlighters. You give it code and a language, and you get highlighted HTML.
+        </p>
+
+        <ul class="stats">
+            @foreach (var stat in stats)
+            {
+                <li>
+                    <span class="stat-value gradient-text">@stat.Value</span>
+                    <span class="stat-label">@stat.Label</span>
+                </li>
+            }
+        </ul>
+
+        <h2 class="features-title">Features</h2>
+        <div class="feature-grid">
+            @foreach (var feature in features)
+            {
+                <article class="feature">
+                    <svg class="feature-icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        @((MarkupString)feature.Icon)
+                    </svg>
+                    <h3>@feature.Title</h3>
+                    <p>@feature.Text</p>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    private sealed record Stat(string Value, string Label);
+
+    private sealed record Feature(string Title, string Text, string Icon);
+
+    private static readonly Stat[] stats =
+    [
+        new("0", "bytes of JavaScript"),
+        new("288", "languages"),
+        new("8", "built-in themes"),
+        new(".NET 10 + 11", "supported"),
+    ];
+
+    private static readonly Feature[] features =
+    [
+        new("The same HTML as Prism.js",
+            "The output is the same as Prism.js 1.30.0, byte by byte. So the theme CSS files of Prism.js work as they are, and the tests compare the output with Prism.js.",
+            """<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>"""),
+        new("No JavaScript",
+            "The code is highlighted in C#, when the component is rendered. You don't need any script in the browser, and no flash of plain code.",
+            """<circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/>"""),
+        new("Blazor Server, WebAssembly, and static SSR",
+            "It works with all of them. Even in static SSR, the first response from the server has the highlighted code.",
+            """<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>"""),
+        new("288 languages",
+            "All the languages of Prism.js are supported, including the languages that are embedded in other languages, such as PHP in HTML, and JSX.",
+            """<path d="M4 6h16M4 12h16M4 18h10"/>"""),
+        new("Small for WebAssembly",
+            "The languages that your app doesn't use are removed when you publish. An app that uses only C# adds about 9 KB (Brotli compressed).",
+            """<path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>"""),
+        new("Any theme of Prism.js",
+            "The eight themes of Prism.js are included. The HTML is the same as Prism.js, so any other theme for Prism.js works too, such as the ones in prism-themes.",
+            """<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/>"""),
+    ];
+}

@@ -4,6 +4,10 @@
 
 A syntax highlighting component for Blazor. It is a C# port of [Prism.js](https://prismjs.com/), so it has no JavaScript at all.
 
+> **All the credit goes to Prism.js**  
+> Prismazor is not an original work. The grammars of all the languages, the way the code is tokenized, the HTML that it makes, and the themes all come from [Prism.js](https://prismjs.com/). Every original idea in this package belongs to Prism.js. I only ported it to C#, because I wanted to use the power of Prism.js natively in the rendering lifecycle of Blazor and in server-side rendering.  
+> My deepest thanks go to Lea Verou and [all the contributors of Prism.js](https://github.com/PrismJS/prism/graphs/contributors). Without their great work, this package would not exist.
+
 ```razor
 <CodeBlock Code="@code" Language="@PrismazorLanguages.CSharp" />
 ```

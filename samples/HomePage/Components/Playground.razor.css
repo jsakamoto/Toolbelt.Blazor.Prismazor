@@ -1,0 +1,101 @@
+.playground {
+    display: grid;
+    grid-template-columns: 17rem minmax(0, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+
+.controls {
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: .5rem;
+    background: var(--bg-2);
+}
+
+.theme-picker {
+    display: grid;
+    gap: .4rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.theme-picker legend,
+.field label {
+    margin-bottom: .5rem;
+    padding: 0;
+    font-weight: 700;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .4rem .65rem;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.theme-option:hover {
+    background: var(--tint);
+}
+
+.theme-option:has(input:checked) {
+    border-color: var(--primary);
+    background: var(--tint);
+    font-weight: 600;
+}
+
+.theme-option input {
+    accent-color: var(--primary);
+}
+
+.field {
+    display: grid;
+}
+
+.field-note {
+    margin: .5rem 0 0;
+    color: var(--muted);
+    font-size: .85rem;
+    line-height: 1.45;
+}
+
+.field select {
+    padding: .5rem .6rem;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.preview ::deep pre {
+    min-height: 18rem;
+    max-height: 32rem;
+    margin: 0;
+    font-size: .95rem;
+}
+
+.usage h3 {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 899px) {
+    .playground {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .theme-picker {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .theme-picker legend {
+        grid-column: 1 / -1;
+    }
+}

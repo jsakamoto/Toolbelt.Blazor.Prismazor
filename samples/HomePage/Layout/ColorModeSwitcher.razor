@@ -1,0 +1,39 @@
+@inherits InteractiveComponentBase
+@implements IDisposable
+@inject ColorModeService ColorModeService
+
+<div class="color-mode" role="radiogroup" aria-label="Color mode">
+    @foreach (var item in items)
+    {
+        var selected = this.ColorModeService.Mode == item.Mode;
+        <button type="button"
+                role="radio"
+                aria-checked="@(selected ? "true" : "false")"
+                title="@item.Label"
+                class="@(selected ? "selected" : null)"
+                disabled="@(!this.IsInteractive)"
+                @onclick="() => this.ColorModeService.SetModeAsync(item.Mode)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                @((MarkupString)item.Icon)
+            </svg>
+            <span class="visually-hidden">@item.Label</span>
+        </button>
+    }
+</div>
+
+@code {
+    private sealed record Item(ColorMode Mode, string Label, string Icon);
+
+    private static readonly Item[] items =
+    [
+        new(ColorMode.Auto, "Follow the system setting", """<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>"""),
+        new(ColorMode.Light, "Light mode", """<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>"""),
+        new(ColorMode.Dark, "Dark mode", """<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>"""),
+    ];
+
+    protected override void OnInitialized() => this.ColorModeService.Changed += this.OnChanged;
+
+    private void OnChanged() => this.InvokeAsync(this.StateHasChanged);
+
+    public void Dispose() => this.ColorModeService.Changed -= this.OnChanged;
+}

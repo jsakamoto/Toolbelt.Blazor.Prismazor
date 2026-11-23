@@ -1,0 +1,65 @@
+@inherits LayoutComponentBase
+@implements IDisposable
+@inject ThemeState ThemeState
+@inject ColorModeService ColorModeService
+
+@* All the theme CSS files are loaded in advance, and only the selected one is applied (the others have a media query that never matches).
+   The playground switches them in one step, so there is no moment without a theme, and the transition can animate the change. *@
+<HeadContent>
+    @foreach (var theme in PrismTheme.All)
+    {
+        <link rel="stylesheet" href="@theme.Href" media="@(theme == this.ThemeState.Theme ? "all" : "not all")" />
+    }
+</HeadContent>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="./">
+            <img src="nupkg-icon.png" alt="" width="32" height="32" />
+            <span>Prismazor</span>
+        </a>
+        <nav class="main-nav" aria-label="Main">
+            <a href="#features">Features</a>
+            <a href="#try-it">Try it</a>
+            <a href="#get-started">Get started</a>
+            <a class="with-icon" href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor"><BrandIcon Kind="BrandIconKind.GitHub" />GitHub</a>
+        </nav>
+        <ColorModeSwitcher />
+    </div>
+</header>
+
+<main>
+    @Body
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>
+            <strong>Prismazor</strong> is released under the
+            <a href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor/blob/main/LICENSE">MIT License</a>.
+        </p>
+        <p>
+            It is a port of <a class="with-icon" href="https://prismjs.com/"><BrandIcon Kind="BrandIconKind.PrismJs" />Prism.js</a> by Lea Verou and the contributors, which is also under the MIT License.
+            The fonts of this page are Open Sans and Space Grotesk, under the SIL Open Font License.
+        </p>
+        <p>
+            <a class="with-icon" href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor"><BrandIcon Kind="BrandIconKind.GitHub" />GitHub</a>
+            <a class="with-icon" href="https://www.nuget.org/packages/Toolbelt.Blazor.Prismazor/"><BrandIcon Kind="BrandIconKind.NuGet" />NuGet</a>
+            <a class="with-icon" href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor/blob/main/RELEASE-NOTES.txt"><BrandIcon Kind="BrandIconKind.Document" />Release notes</a>
+        </p>
+    </div>
+</footer>
+
+@code {
+    protected override void OnInitialized() => this.ThemeState.Changed += this.OnThemeChanged;
+
+    // JS interop is not available while the page is prerendered, so the saved color mode is read after the first render.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender) await this.ColorModeService.InitializeAsync();
+    }
+
+    private void OnThemeChanged() => this.InvokeAsync(this.StateHasChanged);
+
+    public void Dispose() => this.ThemeState.Changed -= this.OnThemeChanged;
+}

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>$(WarningsAsErrors);nullable</WarningsAsErrors>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
+    <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
+    <!-- The page is prerendered at publish time and shown right away, with no loading screen on it.
+         The controls stay disabled until the app starts (see InteractiveComponentBase). -->
+    <BlazorWasmPrerenderingDeleteLoadingContents>true</BlazorWasmPrerenderingDeleteLoadingContents>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="11.0.0" PrivateAssets="all" />
+    <PackageReference Include="PublishSPAforGitHubPages.Build" Version="3.0.3" />
+    <PackageReference Include="BlazorWasmPreRendering.Build" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Toolbelt.Blazor.Prismazor\Toolbelt.Blazor.Prismazor.csproj" />
+  </ItemGroup>
+
+  <!-- The package icon is shared with the NuGet package, so it lives in the ".assets" folder.
+       ContentRoot makes "dotnet watch" and "dotnet run" serve it from there, too. Without it, they look for it in wwwroot. -->
+  <ItemGroup>
+    <Content Include="..\..\.assets\nupkg-icon.png" Link="wwwroot\nupkg-icon.png" ContentRoot="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..\.assets\'))" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,38 @@
+@inherits InteractiveComponentBase
+@inject IJSRuntime JS
+
+<div class="copyable">
+    <CodeBlock Code="@this.Code" Language="@this.Grammar" />
+    <button type="button" class="copy-button" disabled="@(!this.IsInteractive)" @onclick="this.CopyAsync" aria-label="Copy the code to the clipboard">
+        @(this.copied ? "Copied!" : "Copy")
+    </button>
+</div>
+
+@code {
+    private bool copied;
+
+    [Parameter, EditorRequired]
+    public string Code { get; set; } = "";
+
+    [Parameter, EditorRequired]
+    public Grammar Grammar { get; set; } = default!;
+
+    private async Task CopyAsync()
+    {
+        try
+        {
+            // This is a function of the browser itself, so there is no JavaScript file for it.
+            await this.JS.InvokeVoidAsync("navigator.clipboard.writeText", this.Code);
+        }
+        catch (JSException)
+        {
+            // The browser may deny the access to the clipboard.
+            return;
+        }
+
+        this.copied = true;
+        this.StateHasChanged();
+        await Task.Delay(1500);
+        this.copied = false;
+    }
+}
