@@ -99,6 +99,7 @@ PrismazorLanguageRegistry.Register(PrismazorLanguages.JavaScript, "js");
 ## Differences from Prism.js
 
 - Prism.js changes the grammar of a language depending on the languages that are loaded. This library follows the state of `loadLanguages()` of Prism.js, which loads all languages. The plugins that change another language, such as `js-extras` and `jsdoc`, are not applied to the language they change.
+- The plugin system of Prism.js is not supported. Plugins such as Line Numbers, Show Language, and Autoloader do not work with this library.
 - The hooks of a language work only when you highlight that language.
 - The word boundary `\b` and the space `\s` in the patterns follow .NET, so they may not work the same way as Prism.js for non-ASCII characters.
 

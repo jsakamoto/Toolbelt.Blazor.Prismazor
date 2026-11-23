@@ -166,6 +166,12 @@ a:hover {
     max-width: 46rem;
 }
 
+.fine-print {
+    font-size: .875rem;
+    color: var(--muted);
+    max-width: 46rem;
+}
+
 .gradient-text {
     background: var(--gradient);
     background-clip: text;
