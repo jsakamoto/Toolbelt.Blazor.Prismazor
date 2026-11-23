@@ -1,5 +1,9 @@
 [
   {
+    "id": "plain",
+    "className": "Plain"
+  },
+  {
     "id": "markup",
     "className": "Markup"
   },

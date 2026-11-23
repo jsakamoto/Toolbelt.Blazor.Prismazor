@@ -21,8 +21,15 @@ export const modifierIds = allIds.filter(id => [].concat(components[id].modify ?
 /** The ids of the components that are loaded into the main environment. */
 export const mainIds = allIds.filter(id => !modifierIds.includes(id));
 
+// The languages that prism-core.js defines by itself, which are not in components.json.
+// "plain" is an empty grammar, and "plaintext", "text", and "txt" are other names of it.
+const coreLanguages = { plain: 'Plain text' };
+
+/** The ids of the languages that prism-core.js defines by itself. */
+export const coreIds = Object.keys(coreLanguages);
+
 /** The title of a language, such as "C#". */
-export const titleOf = id => components[id].title;
+export const titleOf = id => coreLanguages[id] ?? components[id].title;
 
 /** The ids of the languages whose own component file registers a before-tokenize or after-tokenize hook. */
 export const hookSourceIds = allIds.filter(id => {

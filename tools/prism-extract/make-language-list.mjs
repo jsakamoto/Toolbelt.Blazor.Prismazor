@@ -1,6 +1,6 @@
 // Writes languages.json: every PrismJS language that has a grammar and that the generator can convert.
 import { writeFile } from 'node:fs/promises';
-import { createEnv, allIds, mainIds, modifierIds } from './prism-env.mjs';
+import { createEnv, allIds, coreIds, mainIds, modifierIds } from './prism-env.mjs';
 
 // Languages the generator cannot convert yet, with the reason.
 const unsupported = {};
@@ -12,6 +12,13 @@ const mainEnv = createEnv(mainIds);
 const seen = new Map();
 const result = [];
 const skipped = [];
+
+// The languages of prism-core.js come first. The grammar of "plain" is empty on purpose, so it is not skipped below.
+for (const id of coreIds) {
+  seen.set(mainEnv.Prism.languages[id], id);
+  result.push({ id, className: pascalCase(id) });
+}
+
 for (const id of allIds) {
   const env = modifierIds.includes(id) ? createEnv([...mainIds, id]) : mainEnv;
   const grammar = env.Prism.languages[id];

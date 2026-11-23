@@ -12,6 +12,11 @@ namespace Toolbelt.Blazor.Prismazor;
 public static class PrismazorLanguages
 {
     /// <summary>
+    /// Gets the grammar of Plain text.
+    /// </summary>
+    public static Grammar Plain => PlainLanguage.Root;
+
+    /// <summary>
     /// Gets the grammar of Markup.
     /// </summary>
     public static Grammar Markup => MarkupLanguage.Root;

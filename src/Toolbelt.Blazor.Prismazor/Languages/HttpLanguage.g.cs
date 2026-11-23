@@ -21,7 +21,6 @@ internal static class HttpLanguage
         var g7 = new Grammar();
         var g8 = new Grammar();
         var g9 = new Grammar();
-        var g10 = new Grammar();
         var p0 = new GrammarPattern(@"(?<![^\n\r\p{Zl}\p{Zp}])(?:CONNECT|DELETE|GET|HEAD|OPTIONS|PATCH|POST|PRI|PUT|SEARCH|TRACE)\s(?:https?:\/\/|\/)\S*\sHTTP\/[0-9.]+", inside: g1);
         var p1 = new GrammarPattern(@"^[A-Z]+\b", alias: [@"property"]);
         var p2 = new GrammarPattern(@"^(\s)(?:https?:\/\/|\/)\S*(?=\s)", lookbehind: true, alias: [@"url"], inside: UriLanguage.Root);
@@ -57,8 +56,8 @@ internal static class HttpLanguage
         var p32 = new GrammarPattern(@"(content-type:\s*text\/xml(?:(?:\r\n?|\n)[a-zA-Z0-9_\-][^\n\r\p{Zl}\p{Zp}]*)*(?:\r(?:\n|(?!\n))|\n))[^ \ta-zA-Z0-9_\-][\s\S]*", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, inside: g3);
         var p33 = new GrammarPattern(@"(content-type:\s*text\/html(?:(?:\r\n?|\n)[a-zA-Z0-9_\-][^\n\r\p{Zl}\p{Zp}]*)*(?:\r(?:\n|(?!\n))|\n))[^ \ta-zA-Z0-9_\-][\s\S]*", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, inside: MarkupLanguage.Root);
         var p34 = new GrammarPattern(@"(content-type:\s*text\/css(?:(?:\r\n?|\n)[a-zA-Z0-9_\-][^\n\r\p{Zl}\p{Zp}]*)*(?:\r(?:\n|(?!\n))|\n))[^ \ta-zA-Z0-9_\-][\s\S]*", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, inside: CssLanguage.Root);
-        var p35 = new GrammarPattern(@"(content-type:\s*text\/plain(?:(?:\r\n?|\n)[a-zA-Z0-9_\-][^\n\r\p{Zl}\p{Zp}]*)*(?:\r(?:\n|(?!\n))|\n))[^ \ta-zA-Z0-9_\-][\s\S]*", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, inside: g9);
-        var p36 = new GrammarPattern(@"(?<![^\n\r\p{Zl}\p{Zp}])[a-zA-Z0-9_\-]+:[^\n\r\p{Zl}\p{Zp}]+(?:(?:\r\n?|\n)[ \t][^\n\r\p{Zl}\p{Zp}]+)*", inside: g10);
+        var p35 = new GrammarPattern(@"(content-type:\s*text\/plain(?:(?:\r\n?|\n)[a-zA-Z0-9_\-][^\n\r\p{Zl}\p{Zp}]*)*(?:\r(?:\n|(?!\n))|\n))[^ \ta-zA-Z0-9_\-][\s\S]*", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, inside: PlainLanguage.Root);
+        var p36 = new GrammarPattern(@"(?<![^\n\r\p{Zl}\p{Zp}])[a-zA-Z0-9_\-]+:[^\n\r\p{Zl}\p{Zp}]+(?:(?:\r\n?|\n)[ \t][^\n\r\p{Zl}\p{Zp}]+)*", inside: g9);
         var p37 = new GrammarPattern(@"(^(?:Content-Security-Policy):[ 	]*(?![ 	]))[\s\S]+", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, alias: [@"csp", @"languages-csp"], inside: CspLanguage.Root);
         var p38 = new GrammarPattern(@"(^(?:Public-Key-Pins(?:-Report-Only)?):[ 	]*(?![ 	]))[\s\S]+", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, alias: [@"hpkp", @"languages-hpkp"], inside: HpkpLanguage.Root);
         var p39 = new GrammarPattern(@"(^(?:Strict-Transport-Security):[ 	]*(?![ 	]))[\s\S]+", options: RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, lookbehind: true, alias: [@"hsts", @"languages-hsts"], inside: HstsLanguage.Root);
@@ -131,9 +130,6 @@ internal static class HttpLanguage
         ]);
 
         g9.Define([
-        ]);
-
-        g10.Define([
             new(@"header-value", [p37, p38, p39, p40]),
             new(@"header-name", [p41]),
             new(@"punctuation", [p42]),

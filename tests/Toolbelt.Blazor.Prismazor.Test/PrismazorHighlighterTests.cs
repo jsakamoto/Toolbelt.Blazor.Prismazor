@@ -54,6 +54,15 @@ public class PrismazorHighlighterTests
     }
 
     [Test]
+    public void Highlight_Plain_OnlyEncodesTheCode()
+    {
+        // The same as "plain" of prism-core.js, which has no tokens.
+        PrismazorHighlighter.Highlight("<b>int x = 1; // & \"str\"</b>", PrismazorLanguages.Plain)
+            .Is("&lt;b>int x = 1; // &amp; \"str\"&lt;/b>");
+        PrismazorLanguages.Plain.Id.Is("plain");
+    }
+
+    [Test]
     public void Highlight_EncodesPlainText()
     {
         PrismazorHighlighter.Highlight("a < b & c > d", PrismazorLanguages.Css).Is("a &lt; b &amp; c > d");

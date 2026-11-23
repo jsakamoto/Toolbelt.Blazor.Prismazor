@@ -1,9 +1,9 @@
 // Loads PrismJS grammars and writes them to out/grammars.json as an object graph.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { allIds, createEnv, createEnvFor, hookSourceIds, mainIds, modifierIds, prismVersion, probeTemplating, titleOf } from './prism-env.mjs';
+import { allIds, coreIds, createEnv, createEnvFor, hookSourceIds, mainIds, modifierIds, prismVersion, probeTemplating, titleOf } from './prism-env.mjs';
 
 const languages = JSON.parse(await readFile(new URL('./languages.json', import.meta.url), 'utf8'));
-const unknownIds = languages.map(l => l.id).filter(id => !allIds.includes(id));
+const unknownIds = languages.map(l => l.id).filter(id => !allIds.includes(id) && !coreIds.includes(id));
 if (unknownIds.length > 0) throw new Error(`Unknown language ids: ${unknownIds.join(', ')}`);
 
 // The graph is shared by all environments. Grammars and patterns are objects here, so each environment keeps its own

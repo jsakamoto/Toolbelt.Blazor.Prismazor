@@ -26,8 +26,8 @@ This project re-implements Prism.js as a native Blazor syntax highlighting compo
 
 ## Status (2026-11-23)
 
-- All 288 languages of PrismJS 1.30.0 are generated. The hooks are ported too (13 markup-templating languages, jsx / tsx, xquery, graphql, naniscript, and markdown).
-- All 326 tests pass on both net10.0 and net11.0. The 24 fixture folders, and the comparison that gives the same input to all 288 languages, match the output of PrismJS byte by byte.
+- All 288 languages of PrismJS 1.30.0 are generated, plus `plain` (the empty grammar of prism-core.js), so there are 289 grammars. The hooks are ported too (13 markup-templating languages, jsx / tsx, xquery, graphql, naniscript, and markdown).
+- All 328 tests pass on both net10.0 and net11.0. The 24 fixture folders, and the comparison that gives the same input to all 289 grammars, match the output of PrismJS byte by byte.
 - The trimming is verified. When you publish in Release (WebAssembly), the languages that are not used are removed from `Toolbelt.Blazor.Prismazor.wasm`. An app that uses only C# gets 79,637 B, and 8,987 B after Brotli compression.
 - The dll of the library in Release is 1.59 MB, and the nupkg is 330 KB. On Blazor Server (published in Release, measured once on a local machine), the memory right after startup is 68 MB and the first page takes 69 ms, which is almost the same as the 4-language version. Even if all languages are used once, it takes 305 ms and the memory grows by about 50 MB.
 - The repository is on GitHub (private).
