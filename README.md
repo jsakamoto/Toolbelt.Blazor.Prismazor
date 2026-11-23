@@ -1,4 +1,4 @@
-# Prismazor - A Port of Prism.js to Blazor [![NuGet Package](https://img.shields.io/nuget/v/Toolbelt.Blazor.Prismazor.svg)](https://www.nuget.org/packages/Toolbelt.Blazor.Prismazor/) [![Discord](https://img.shields.io/discord/798312431893348414?style=flat&logo=discord&logoColor=white&label=Blazor%20Community&labelColor=5865f2&color=gray)](https://discord.com/channels/798312431893348414/1202165955900473375)
+# Prismazor - A Port of Prism.js to Blazor [![NuGet Package](https://img.shields.io/nuget/v/Toolbelt.Blazor.Prismazor.svg)](https://www.nuget.org/packages/Toolbelt.Blazor.Prismazor/) [![unit tests](https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor/actions/workflows/unit-tests.yml) [![Discord](https://img.shields.io/discord/798312431893348414?style=flat&logo=discord&logoColor=white&label=Blazor%20Community&labelColor=5865f2&color=gray)](https://discord.com/channels/798312431893348414/1202165955900473375)
 
 ## Summary
 
