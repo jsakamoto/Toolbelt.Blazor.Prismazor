@@ -1,0 +1,24 @@
+<p class="renderer">Renderer: <strong>@RendererInfo.Name</strong>, Interactive: <strong>@RendererInfo.IsInteractive</strong></p>
+
+<div class="editor">
+    <select @bind="this.selectedIndex" @bind:after="this.OnLanguageChanged" disabled="@(!RendererInfo.IsInteractive)">
+        @for (var i = 0; i < SampleCodes.All.Count; i++)
+        {
+            <option value="@i">@SampleCodes.All[i].Title</option>
+        }
+    </select>
+    <textarea @bind="this.code" @bind:event="oninput" rows="8" spellcheck="false" disabled="@(!RendererInfo.IsInteractive)"></textarea>
+</div>
+
+<CodeBlock Code="@this.code" Language="@SampleCodes.All[this.selectedIndex].Grammar" />
+
+@code {
+    private int selectedIndex = 0;
+
+    private string code = SampleCodes.All[0].Code;
+
+    private void OnLanguageChanged()
+    {
+        this.code = SampleCodes.All[this.selectedIndex].Code;
+    }
+}

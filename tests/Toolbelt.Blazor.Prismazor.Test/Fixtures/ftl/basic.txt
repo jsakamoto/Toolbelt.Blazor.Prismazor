@@ -1,0 +1,6 @@
+<#-- a comment -->
+<ul>
+<#list users as user>
+  <li>${user.name?upper_case}</li>
+</#list>
+</ul>

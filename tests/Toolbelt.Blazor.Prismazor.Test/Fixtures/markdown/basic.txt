@@ -1,0 +1,27 @@
+---
+title: Sample
+tags: [a, b]
+---
+
+# Heading
+
+Some *emphasis*, **strong**, `code` and a [link](http://example.com) with &amp; an entity.
+
+```csharp
+var x = 1; // C# &amp; <b>
+```
+
+```javascript
+const f = () => `a ${b}`;
+```
+
+```css
+a { color: red; }
+```
+
+```unknownlang
+stays plain
+```
+
+- item one
+- item two

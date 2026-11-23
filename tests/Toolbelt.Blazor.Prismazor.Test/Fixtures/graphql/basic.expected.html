@@ -1,0 +1,10 @@
+<span class="token keyword">query</span> <span class="token constant">Q</span><span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token property-query">user</span><span class="token punctuation">(</span><span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token variable">$id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token property">name</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">mutation</span> <span class="token definition-mutation function">AddUser</span><span class="token punctuation">(</span><span class="token variable variable-input">$name</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token variable variable-input">$age</span><span class="token punctuation">:</span> <span class="token scalar">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token property-query property-mutation">addUser</span><span class="token punctuation">(</span><span class="token attr-name">name</span><span class="token punctuation">:</span> <span class="token variable variable-input">$name</span><span class="token punctuation">,</span> <span class="token attr-name">age</span><span class="token punctuation">:</span> <span class="token variable variable-input">$age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token property">id</span>
+    <span class="token property">name</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>

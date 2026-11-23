@@ -1,0 +1,6 @@
+<ul>
+{% for user in users %}
+  <li class="{{ loop.index is odd ? 'odd' : 'even' }}">{{ user.name|upper }}</li>
+{% endfor %}
+</ul>
+{# a comment #}

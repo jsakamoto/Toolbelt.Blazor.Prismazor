@@ -1,0 +1,15 @@
+{
+  "name": "prism-extract",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "languages": "node make-language-list.mjs",
+    "extract": "node extract.mjs",
+    "fixtures": "node make-fixtures.mjs",
+    "themes": "node copy-themes.mjs",
+    "all-languages-fixture": "node make-all-languages-fixture.mjs"
+  },
+  "dependencies": {
+    "prismjs": "1.30.0"
+  }
+}

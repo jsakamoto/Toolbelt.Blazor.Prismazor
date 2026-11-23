@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+'use strict';
+import { readFile } from 'node:fs/promises';
+import * as path from "node:path";
+
+/**
+ * Doc comment with @param {string} name
+ */
+export default class Greeter extends Base {
+  static #count = 0;
+  #name;
+
+  constructor(name = "world") {
+    super();
+    this.#name = name;
+    Greeter.#count++;
+  }
+
+  get name() { return this.#name; }
+
+  async *items() {
+    for await (const item of source) yield item;
+  }
+
+  greet() {
+    const message = `Hello, ${this.#name.toUpperCase()}! Count: ${Greeter.#count}`;
+    return message;
+  }
+}
+
+const re = /^[a-z]+\/(\d{2,})$/gi;
+const ratio = a / b / 2;
+const numbers = [0x1F, 0o17, 0b101, 1_000_000n, 3.14e-10, .5, NaN, Infinity];
+let obj = { key: 'value', "quoted-key": null, [computed]: undefined, method() {}, arrow: (x) => x ** 2 };
+var fn = function* named(a, ...rest) { return typeof a === 'string' ? a ?? rest : void 0; };
+label: for (let i = 0; i < 10; i += 1) { if (i % 2) continue label; else break; }
+try { throw new Error("oops"); } catch { console.error?.(err); } finally { delete obj.key; }
+const { a, b: [c, d] } = obj;
+document.querySelector('#app').addEventListener('click', e => e.preventDefault());
+// Regex after keywords and operators
+if (/test/.test(str)) return /x/.source;

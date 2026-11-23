@@ -1,0 +1,4 @@
+* text=auto
+
+# Fixtures are compared byte by byte with the PrismJS output, so keep their line endings as they are.
+tests/**/Fixtures/** -text

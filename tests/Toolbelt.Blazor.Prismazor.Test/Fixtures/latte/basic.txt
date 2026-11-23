@@ -1,0 +1,6 @@
+{* a comment *}
+<ul>
+{foreach $items as $item}
+  <li>{$item|upper}</li>
+{/foreach}
+</ul>

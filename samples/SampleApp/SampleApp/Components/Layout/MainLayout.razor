@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<nav class="nav">
+    <NavLink href="" Match="NavLinkMatch.All">Static SSR</NavLink>
+    <NavLink href="server">Interactive Server</NavLink>
+    <NavLink href="wasm">Interactive WebAssembly</NavLink>
+</nav>
+
+<main class="main">
+    @Body
+</main>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

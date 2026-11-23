@@ -1,0 +1,10 @@
+query Q($id: ID!) {
+  user(id: $id) { name }
+}
+
+mutation AddUser($name: String!, $age: Int) {
+  addUser(name: $name, age: $age) {
+    id
+    name
+  }
+}

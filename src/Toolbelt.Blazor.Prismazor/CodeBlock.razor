@@ -1,0 +1,47 @@
+<pre tabindex="0" @attributes="this.AdditionalAttributes" class="@this.CssClass"><code class="@this.LanguageClass">@this.highlightedCode</code></pre>
+
+@code {
+    /// <summary>
+    /// Gets or sets the code to highlight.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public string Code { get; set; } = "";
+
+    /// <summary>
+    /// Gets or sets the grammar of the language of the code, such as <see cref="PrismazorLanguages.CSharp"/>.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public Grammar Language { get; set; } = default!;
+
+    /// <summary>
+    /// Gets or sets additional attributes for the <c>pre</c> element.
+    /// </summary>
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IReadOnlyDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    private MarkupString highlightedCode;
+
+    private string? lastCode;
+
+    private Grammar? lastLanguage;
+
+    private string LanguageClass => "language-" + this.Language.Id;
+
+    private string CssClass => this.AdditionalAttributes?.TryGetValue("class", out var userClass) == true
+        ? $"{this.LanguageClass} {userClass}"
+        : this.LanguageClass;
+
+    /// <inheritdoc/>
+    protected override void OnParametersSet()
+    {
+        ArgumentNullException.ThrowIfNull(this.Language);
+
+        // Highlight synchronously so that static SSR sends highlighted HTML in the first response.
+        if (this.Code != this.lastCode || this.Language != this.lastLanguage)
+        {
+            this.highlightedCode = new(PrismazorHighlighter.Highlight(this.Code ?? "", this.Language));
+            this.lastCode = this.Code;
+            this.lastLanguage = this.Language;
+        }
+    }
+}

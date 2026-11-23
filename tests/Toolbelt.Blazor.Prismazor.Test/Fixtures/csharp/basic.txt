@@ -1,0 +1,60 @@
+// A sample class with many C# features.
+#nullable enable
+using System;
+using System.Collections.Generic;
+using static System.Math;
+using Alias = System.Text.StringBuilder;
+
+namespace Sample.App;
+
+/// <summary>
+/// Represents a <see cref="Person"/> record.
+/// </summary>
+[Serializable, Obsolete("Use Person2", error: false)]
+public sealed partial class Person<T> : IComparable<Person<T>>, IDisposable where T : struct, IEquatable<T>
+{
+    private const int MaxAge = 0x7F_FF;
+    private static readonly double Ratio = 1.5e-3d;
+    private readonly List<string> names = [];
+    private int? age = null;
+
+    public required string Name { get; init; }
+
+    public event EventHandler<EventArgs>? Changed;
+
+    /* Multi-line
+       comment */
+    public Person(string name) => this.Name = name ?? throw new ArgumentNullException(nameof(name));
+
+    public int CompareTo(Person<T>? other) => string.Compare(this.Name, other?.Name, StringComparison.Ordinal);
+
+    public async Task<IReadOnlyList<string>> LoadAsync(CancellationToken token = default)
+    {
+        var path = @"C:\temp\""quoted"".txt";
+        var greeting = $"Hello, {this.Name}! You are {this.age ?? 0,5:D3} years old.";
+        var raw = """
+            Raw "string" literal
+            """;
+        var interpolatedVerbatim = $@"Path: {path}\{{escaped}}";
+        char c = '\n', d = '\u0041';
+        await Task.Delay(100, token).ConfigureAwait(false);
+        foreach (var (key, value) in new Dictionary<string, int> { ["a"] = 1 })
+        {
+            if (key is "a" or "b" && value > 0) continue;
+        }
+        var result = this.names switch
+        {
+            [] => "empty",
+            [var first, ..] when first.Length > 3 => first,
+            _ => default!,
+        };
+        Func<int, int> square = x => x * x;
+        int[] numbers = { 1, 2, 3 };
+        var query = from n in numbers where n > 1 orderby n descending select n * 2;
+        return this.names.AsReadOnly();
+    }
+
+    public void Dispose() => GC.SuppressFinalize(this);
+}
+
+public record struct Point(int X, int Y);

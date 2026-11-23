@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "markup",
+    "className": "Markup"
+  },
+  {
+    "id": "css",
+    "className": "Css"
+  },
+  {
+    "id": "clike",
+    "className": "Clike"
+  },
+  {
+    "id": "javascript",
+    "className": "JavaScript"
+  },
+  {
+    "id": "abap",
+    "className": "Abap"
+  },
+  {
+    "id": "abnf",
+    "className": "Abnf"
+  },
+  {
+    "id": "actionscript",
+    "className": "Actionscript"
+  },
+  {
+    "id": "ada",
+    "className": "Ada"
+  },
+  {
+    "id": "agda",
+    "className": "Agda"
+  },
+  {
+    "id": "al",
+    "className": "Al"
+  },
+  {
+    "id": "antlr4",
+    "className": "Antlr4"
+  },
+  {
+    "id": "apacheconf",
+    "className": "Apacheconf"
+  },
+  {
+    "id": "apex",
+    "className": "Apex"
+  },
+  {
+    "id": "apl",
+    "className": "Apl"
+  },
+  {
+    "id": "applescript",
+    "className": "Applescript"
+  },
+  {
+    "id": "aql",
+    "className": "Aql"
+  },
+  {
+    "id": "arduino",
+    "className": "Arduino"
+  },
+  {
+    "id": "arff",
+    "className": "Arff"
+  },
+  {
+    "id": "armasm",
+    "className": "Armasm"
+  },
+  {
+    "id": "arturo",
+    "className": "Arturo"
+  },
+  {
+    "id": "asciidoc",
+    "className": "Asciidoc"
+  },
+  {
+    "id": "aspnet",
+    "className": "Aspnet"
+  },
+  {
+    "id": "asm6502",
+    "className": "Asm6502"
+  },
+  {
+    "id": "asmatmel",
+    "className": "Asmatmel"
+  },
+  {
+    "id": "autohotkey",
+    "className": "Autohotkey"
+  },
+  {
+    "id": "autoit",
+    "className": "Autoit"
+  },
+  {
+    "id": "avisynth",
+    "className": "Avisynth"
+  },
+  {
+    "id": "avro-idl",
+    "className": "AvroIdl"
+  },
+  {
+    "id": "awk",
+    "className": "Awk"
+  },
+  {
+    "id": "bash",
+    "className": "Bash"
+  },
+  {
+    "id": "basic",
+    "className": "Basic"
+  },
+  {
+    "id": "batch",
+    "className": "Batch"
+  },
+  {
+    "id": "bbcode",
+    "className": "Bbcode"
+  },
+  {
+    "id": "bbj",
+    "className": "Bbj"
+  },
+  {
+    "id": "bicep",
+    "className": "Bicep"
+  },
+  {
+    "id": "birb",
+    "className": "Birb"
+  },
+  {
+    "id": "bison",
+    "className": "Bison"
+  },
+  {
+    "id": "bnf",
+    "className": "Bnf"
+  },
+  {
+    "id": "bqn",
+    "className": "Bqn"
+  },
+  {
+    "id": "brainfuck",
+    "className": "Brainfuck"
+  },
+  {
+    "id": "brightscript",
+    "className": "Brightscript"
+  },
+  {
+    "id": "bro",
+    "className": "Bro"
+  },
+  {
+    "id": "bsl",
+    "className": "Bsl"
+  },
+  {
+    "id": "c",
+    "className": "C"
+  },
+  {
+    "id": "csharp",
+    "className": "CSharp"
+  },
+  {
+    "id": "cpp",
+    "className": "Cpp"
+  },
+  {
+    "id": "cfscript",
+    "className": "Cfscript"
+  },
+  {
+    "id": "chaiscript",
+    "className": "Chaiscript"
+  },
+  {
+    "id": "cil",
+    "className": "Cil"
+  },
+  {
+    "id": "clojure",
+    "className": "Clojure"
+  },
+  {
+    "id": "cmake",
+    "className": "Cmake"
+  },
+  {
+    "id": "cobol",
+    "className": "Cobol"
+  },
+  {
+    "id": "coffeescript",
+    "className": "Coffeescript"
+  },
+  {
+    "id": "concurnas",
+    "className": "Concurnas"
+  },
+  {
+    "id": "csp",
+    "className": "Csp"
+  },
+  {
+    "id": "cooklang",
+    "className": "Cooklang"
+  },
+  {
+    "id": "coq",
+    "className": "Coq"
+  },
+  {
+    "id": "crystal",
+    "className": "Crystal"
+  },
+  {
+    "id": "csv",
+    "className": "Csv"
+  },
+  {
+    "id": "cue",
+    "className": "Cue"
+  },
+  {
+    "id": "cypher",
+    "className": "Cypher"
+  },
+  {
+    "id": "d",
+    "className": "D"
+  },
+  {
+    "id": "dart",
+    "className": "Dart"
+  },
+  {
+    "id": "dataweave",
+    "className": "Dataweave"
+  },
+  {
+    "id": "dax",
+    "className": "Dax"
+  },
+  {
+    "id": "dhall",
+    "className": "Dhall"
+  },
+  {
+    "id": "diff",
+    "className": "Diff"
+  },
+  {
+    "id": "django",
+    "className": "Django"
+  },
+  {
+    "id": "dns-zone-file",
+    "className": "DnsZoneFile"
+  },
+  {
+    "id": "docker",
+    "className": "Docker"
+  },
+  {
+    "id": "dot",
+    "className": "Dot"
+  },
+  {
+    "id": "ebnf",
+    "className": "Ebnf"
+  },
+  {
+    "id": "editorconfig",
+    "className": "Editorconfig"
+  },
+  {
+    "id": "eiffel",
+    "className": "Eiffel"
+  },
+  {
+    "id": "ejs",
+    "className": "Ejs"
+  },
+  {
+    "id": "elixir",
+    "className": "Elixir"
+  },
+  {
+    "id": "elm",
+    "className": "Elm"
+  },
+  {
+    "id": "etlua",
+    "className": "Etlua"
+  },
+  {
+    "id": "erb",
+    "className": "Erb"
+  },
+  {
+    "id": "erlang",
+    "className": "Erlang"
+  },
+  {
+    "id": "excel-formula",
+    "className": "ExcelFormula"
+  },
+  {
+    "id": "fsharp",
+    "className": "Fsharp"
+  },
+  {
+    "id": "factor",
+    "className": "Factor"
+  },
+  {
+    "id": "false",
+    "className": "False"
+  },
+  {
+    "id": "firestore-security-rules",
+    "className": "FirestoreSecurityRules"
+  },
+  {
+    "id": "flow",
+    "className": "Flow"
+  },
+  {
+    "id": "fortran",
+    "className": "Fortran"
+  },
+  {
+    "id": "ftl",
+    "className": "Ftl"
+  },
+  {
+    "id": "gml",
+    "className": "Gml"
+  },
+  {
+    "id": "gap",
+    "className": "Gap"
+  },
+  {
+    "id": "gcode",
+    "className": "Gcode"
+  },
+  {
+    "id": "gdscript",
+    "className": "Gdscript"
+  },
+  {
+    "id": "gedcom",
+    "className": "Gedcom"
+  },
+  {
+    "id": "gettext",
+    "className": "Gettext"
+  },
+  {
+    "id": "gherkin",
+    "className": "Gherkin"
+  },
+  {
+    "id": "git",
+    "className": "Git"
+  },
+  {
+    "id": "glsl",
+    "className": "Glsl"
+  },
+  {
+    "id": "gn",
+    "className": "Gn"
+  },
+  {
+    "id": "linker-script",
+    "className": "LinkerScript"
+  },
+  {
+    "id": "go",
+    "className": "Go"
+  },
+  {
+    "id": "go-module",
+    "className": "GoModule"
+  },
+  {
+    "id": "gradle",
+    "className": "Gradle"
+  },
+  {
+    "id": "graphql",
+    "className": "Graphql"
+  },
+  {
+    "id": "groovy",
+    "className": "Groovy"
+  },
+  {
+    "id": "haml",
+    "className": "Haml"
+  },
+  {
+    "id": "handlebars",
+    "className": "Handlebars"
+  },
+  {
+    "id": "haskell",
+    "className": "Haskell"
+  },
+  {
+    "id": "haxe",
+    "className": "Haxe"
+  },
+  {
+    "id": "hcl",
+    "className": "Hcl"
+  },
+  {
+    "id": "hlsl",
+    "className": "Hlsl"
+  },
+  {
+    "id": "hoon",
+    "className": "Hoon"
+  },
+  {
+    "id": "http",
+    "className": "Http"
+  },
+  {
+    "id": "hpkp",
+    "className": "Hpkp"
+  },
+  {
+    "id": "hsts",
+    "className": "Hsts"
+  },
+  {
+    "id": "ichigojam",
+    "className": "Ichigojam"
+  },
+  {
+    "id": "icon",
+    "className": "Icon"
+  },
+  {
+    "id": "icu-message-format",
+    "className": "IcuMessageFormat"
+  },
+  {
+    "id": "idris",
+    "className": "Idris"
+  },
+  {
+    "id": "ignore",
+    "className": "Ignore"
+  },
+  {
+    "id": "inform7",
+    "className": "Inform7"
+  },
+  {
+    "id": "ini",
+    "className": "Ini"
+  },
+  {
+    "id": "io",
+    "className": "Io"
+  },
+  {
+    "id": "j",
+    "className": "J"
+  },
+  {
+    "id": "java",
+    "className": "Java"
+  },
+  {
+    "id": "javadoc",
+    "className": "Javadoc"
+  },
+  {
+    "id": "javadoclike",
+    "className": "Javadoclike"
+  },
+  {
+    "id": "javastacktrace",
+    "className": "Javastacktrace"
+  },
+  {
+    "id": "jexl",
+    "className": "Jexl"
+  },
+  {
+    "id": "jolie",
+    "className": "Jolie"
+  },
+  {
+    "id": "jq",
+    "className": "Jq"
+  },
+  {
+    "id": "jsdoc",
+    "className": "Jsdoc"
+  },
+  {
+    "id": "json",
+    "className": "Json"
+  },
+  {
+    "id": "json5",
+    "className": "Json5"
+  },
+  {
+    "id": "jsonp",
+    "className": "Jsonp"
+  },
+  {
+    "id": "jsstacktrace",
+    "className": "Jsstacktrace"
+  },
+  {
+    "id": "julia",
+    "className": "Julia"
+  },
+  {
+    "id": "keepalived",
+    "className": "Keepalived"
+  },
+  {
+    "id": "keyman",
+    "className": "Keyman"
+  },
+  {
+    "id": "kotlin",
+    "className": "Kotlin"
+  },
+  {
+    "id": "kumir",
+    "className": "Kumir"
+  },
+  {
+    "id": "kusto",
+    "className": "Kusto"
+  },
+  {
+    "id": "latex",
+    "className": "Latex"
+  },
+  {
+    "id": "latte",
+    "className": "Latte"
+  },
+  {
+    "id": "less",
+    "className": "Less"
+  },
+  {
+    "id": "lilypond",
+    "className": "Lilypond"
+  },
+  {
+    "id": "liquid",
+    "className": "Liquid"
+  },
+  {
+    "id": "lisp",
+    "className": "Lisp"
+  },
+  {
+    "id": "livescript",
+    "className": "Livescript"
+  },
+  {
+    "id": "llvm",
+    "className": "Llvm"
+  },
+  {
+    "id": "log",
+    "className": "Log"
+  },
+  {
+    "id": "lolcode",
+    "className": "Lolcode"
+  },
+  {
+    "id": "lua",
+    "className": "Lua"
+  },
+  {
+    "id": "magma",
+    "className": "Magma"
+  },
+  {
+    "id": "makefile",
+    "className": "Makefile"
+  },
+  {
+    "id": "markdown",
+    "className": "Markdown"
+  },
+  {
+    "id": "mata",
+    "className": "Mata"
+  },
+  {
+    "id": "matlab",
+    "className": "Matlab"
+  },
+  {
+    "id": "maxscript",
+    "className": "Maxscript"
+  },
+  {
+    "id": "mel",
+    "className": "Mel"
+  },
+  {
+    "id": "mermaid",
+    "className": "Mermaid"
+  },
+  {
+    "id": "metafont",
+    "className": "Metafont"
+  },
+  {
+    "id": "mizar",
+    "className": "Mizar"
+  },
+  {
+    "id": "mongodb",
+    "className": "Mongodb"
+  },
+  {
+    "id": "monkey",
+    "className": "Monkey"
+  },
+  {
+    "id": "moonscript",
+    "className": "Moonscript"
+  },
+  {
+    "id": "n1ql",
+    "className": "N1ql"
+  },
+  {
+    "id": "n4js",
+    "className": "N4js"
+  },
+  {
+    "id": "nand2tetris-hdl",
+    "className": "Nand2tetrisHdl"
+  },
+  {
+    "id": "naniscript",
+    "className": "Naniscript"
+  },
+  {
+    "id": "nasm",
+    "className": "Nasm"
+  },
+  {
+    "id": "neon",
+    "className": "Neon"
+  },
+  {
+    "id": "nevod",
+    "className": "Nevod"
+  },
+  {
+    "id": "nginx",
+    "className": "Nginx"
+  },
+  {
+    "id": "nim",
+    "className": "Nim"
+  },
+  {
+    "id": "nix",
+    "className": "Nix"
+  },
+  {
+    "id": "nsis",
+    "className": "Nsis"
+  },
+  {
+    "id": "objectivec",
+    "className": "Objectivec"
+  },
+  {
+    "id": "ocaml",
+    "className": "Ocaml"
+  },
+  {
+    "id": "odin",
+    "className": "Odin"
+  },
+  {
+    "id": "opencl",
+    "className": "Opencl"
+  },
+  {
+    "id": "openqasm",
+    "className": "Openqasm"
+  },
+  {
+    "id": "oz",
+    "className": "Oz"
+  },
+  {
+    "id": "parigp",
+    "className": "Parigp"
+  },
+  {
+    "id": "parser",
+    "className": "Parser"
+  },
+  {
+    "id": "pascal",
+    "className": "Pascal"
+  },
+  {
+    "id": "pascaligo",
+    "className": "Pascaligo"
+  },
+  {
+    "id": "psl",
+    "className": "Psl"
+  },
+  {
+    "id": "pcaxis",
+    "className": "Pcaxis"
+  },
+  {
+    "id": "peoplecode",
+    "className": "Peoplecode"
+  },
+  {
+    "id": "perl",
+    "className": "Perl"
+  },
+  {
+    "id": "php",
+    "className": "Php"
+  },
+  {
+    "id": "phpdoc",
+    "className": "Phpdoc"
+  },
+  {
+    "id": "plant-uml",
+    "className": "PlantUml"
+  },
+  {
+    "id": "plsql",
+    "className": "Plsql"
+  },
+  {
+    "id": "powerquery",
+    "className": "Powerquery"
+  },
+  {
+    "id": "powershell",
+    "className": "Powershell"
+  },
+  {
+    "id": "processing",
+    "className": "Processing"
+  },
+  {
+    "id": "prolog",
+    "className": "Prolog"
+  },
+  {
+    "id": "promql",
+    "className": "Promql"
+  },
+  {
+    "id": "properties",
+    "className": "Properties"
+  },
+  {
+    "id": "protobuf",
+    "className": "Protobuf"
+  },
+  {
+    "id": "pug",
+    "className": "Pug"
+  },
+  {
+    "id": "puppet",
+    "className": "Puppet"
+  },
+  {
+    "id": "pure",
+    "className": "Pure"
+  },
+  {
+    "id": "purebasic",
+    "className": "Purebasic"
+  },
+  {
+    "id": "purescript",
+    "className": "Purescript"
+  },
+  {
+    "id": "python",
+    "className": "Python"
+  },
+  {
+    "id": "qsharp",
+    "className": "Qsharp"
+  },
+  {
+    "id": "q",
+    "className": "Q"
+  },
+  {
+    "id": "qml",
+    "className": "Qml"
+  },
+  {
+    "id": "qore",
+    "className": "Qore"
+  },
+  {
+    "id": "r",
+    "className": "R"
+  },
+  {
+    "id": "racket",
+    "className": "Racket"
+  },
+  {
+    "id": "cshtml",
+    "className": "Cshtml"
+  },
+  {
+    "id": "jsx",
+    "className": "Jsx"
+  },
+  {
+    "id": "tsx",
+    "className": "Tsx"
+  },
+  {
+    "id": "reason",
+    "className": "Reason"
+  },
+  {
+    "id": "regex",
+    "className": "Regex"
+  },
+  {
+    "id": "rego",
+    "className": "Rego"
+  },
+  {
+    "id": "renpy",
+    "className": "Renpy"
+  },
+  {
+    "id": "rescript",
+    "className": "Rescript"
+  },
+  {
+    "id": "rest",
+    "className": "Rest"
+  },
+  {
+    "id": "rip",
+    "className": "Rip"
+  },
+  {
+    "id": "roboconf",
+    "className": "Roboconf"
+  },
+  {
+    "id": "robotframework",
+    "className": "Robotframework"
+  },
+  {
+    "id": "ruby",
+    "className": "Ruby"
+  },
+  {
+    "id": "rust",
+    "className": "Rust"
+  },
+  {
+    "id": "sas",
+    "className": "Sas"
+  },
+  {
+    "id": "sass",
+    "className": "Sass"
+  },
+  {
+    "id": "scss",
+    "className": "Scss"
+  },
+  {
+    "id": "scala",
+    "className": "Scala"
+  },
+  {
+    "id": "scheme",
+    "className": "Scheme"
+  },
+  {
+    "id": "shell-session",
+    "className": "ShellSession"
+  },
+  {
+    "id": "smali",
+    "className": "Smali"
+  },
+  {
+    "id": "smalltalk",
+    "className": "Smalltalk"
+  },
+  {
+    "id": "smarty",
+    "className": "Smarty"
+  },
+  {
+    "id": "sml",
+    "className": "Sml"
+  },
+  {
+    "id": "solidity",
+    "className": "Solidity"
+  },
+  {
+    "id": "solution-file",
+    "className": "SolutionFile"
+  },
+  {
+    "id": "soy",
+    "className": "Soy"
+  },
+  {
+    "id": "sparql",
+    "className": "Sparql"
+  },
+  {
+    "id": "splunk-spl",
+    "className": "SplunkSpl"
+  },
+  {
+    "id": "sqf",
+    "className": "Sqf"
+  },
+  {
+    "id": "sql",
+    "className": "Sql"
+  },
+  {
+    "id": "squirrel",
+    "className": "Squirrel"
+  },
+  {
+    "id": "stan",
+    "className": "Stan"
+  },
+  {
+    "id": "stata",
+    "className": "Stata"
+  },
+  {
+    "id": "iecst",
+    "className": "Iecst"
+  },
+  {
+    "id": "stylus",
+    "className": "Stylus"
+  },
+  {
+    "id": "supercollider",
+    "className": "Supercollider"
+  },
+  {
+    "id": "swift",
+    "className": "Swift"
+  },
+  {
+    "id": "systemd",
+    "className": "Systemd"
+  },
+  {
+    "id": "t4-cs",
+    "className": "T4Cs"
+  },
+  {
+    "id": "t4-vb",
+    "className": "T4Vb"
+  },
+  {
+    "id": "tap",
+    "className": "Tap"
+  },
+  {
+    "id": "tcl",
+    "className": "Tcl"
+  },
+  {
+    "id": "tt2",
+    "className": "Tt2"
+  },
+  {
+    "id": "textile",
+    "className": "Textile"
+  },
+  {
+    "id": "toml",
+    "className": "Toml"
+  },
+  {
+    "id": "tremor",
+    "className": "Tremor"
+  },
+  {
+    "id": "turtle",
+    "className": "Turtle"
+  },
+  {
+    "id": "twig",
+    "className": "Twig"
+  },
+  {
+    "id": "typescript",
+    "className": "Typescript"
+  },
+  {
+    "id": "typoscript",
+    "className": "Typoscript"
+  },
+  {
+    "id": "unrealscript",
+    "className": "Unrealscript"
+  },
+  {
+    "id": "uorazor",
+    "className": "Uorazor"
+  },
+  {
+    "id": "uri",
+    "className": "Uri"
+  },
+  {
+    "id": "v",
+    "className": "V"
+  },
+  {
+    "id": "vala",
+    "className": "Vala"
+  },
+  {
+    "id": "vbnet",
+    "className": "Vbnet"
+  },
+  {
+    "id": "velocity",
+    "className": "Velocity"
+  },
+  {
+    "id": "verilog",
+    "className": "Verilog"
+  },
+  {
+    "id": "vhdl",
+    "className": "Vhdl"
+  },
+  {
+    "id": "vim",
+    "className": "Vim"
+  },
+  {
+    "id": "visual-basic",
+    "className": "VisualBasic"
+  },
+  {
+    "id": "warpscript",
+    "className": "Warpscript"
+  },
+  {
+    "id": "wasm",
+    "className": "Wasm"
+  },
+  {
+    "id": "web-idl",
+    "className": "WebIdl"
+  },
+  {
+    "id": "wgsl",
+    "className": "Wgsl"
+  },
+  {
+    "id": "wiki",
+    "className": "Wiki"
+  },
+  {
+    "id": "wolfram",
+    "className": "Wolfram"
+  },
+  {
+    "id": "wren",
+    "className": "Wren"
+  },
+  {
+    "id": "xeora",
+    "className": "Xeora"
+  },
+  {
+    "id": "xojo",
+    "className": "Xojo"
+  },
+  {
+    "id": "xquery",
+    "className": "Xquery"
+  },
+  {
+    "id": "yaml",
+    "className": "Yaml"
+  },
+  {
+    "id": "yang",
+    "className": "Yang"
+  },
+  {
+    "id": "zig",
+    "className": "Zig"
+  }
+]

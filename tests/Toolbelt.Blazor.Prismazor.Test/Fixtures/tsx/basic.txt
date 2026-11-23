@@ -1,0 +1,6 @@
+const App = (props: Props): JSX.Element => (
+  <ul className="list">
+    list of {props.items.length} items
+    <li key={1}>first, plain text</li>
+  </ul>
+);

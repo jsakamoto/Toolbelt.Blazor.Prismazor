@@ -1,0 +1,5 @@
+# Start
+@set x=5
+Kohaku: Hello [i]world[/i], this line is fine.
+This line has an [unbalanced bracket.
+@goto Start

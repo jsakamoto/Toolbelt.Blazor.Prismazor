@@ -1,0 +1,7 @@
+{% comment %}a comment{% endcomment %}
+<ul>
+{% for p in products %}
+  <li>{{ p.title | upcase }}</li>
+{% endfor %}
+</ul>
+{% raw %}{{ not parsed }}{% endraw %}

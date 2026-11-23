@@ -1,0 +1,4 @@
+{% load static %}
+<h1 class="title">{{ page.title|title }}</h1>
+{% if user.is_authenticated %}<p>Hello, {{ user.name }} on {{ value|date:"D d M Y" }}</p>{% endif %}
+{# a comment #}

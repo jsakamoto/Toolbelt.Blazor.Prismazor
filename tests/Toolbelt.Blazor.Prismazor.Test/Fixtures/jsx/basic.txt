@@ -1,0 +1,7 @@
+const App = () => (
+  <div className="app" {...props}>
+    Hello, {name}! It's plain text.
+    <Item key={1} onClick={() => run(1)}>plain text here</Item>
+    <br />
+  </div>
+);

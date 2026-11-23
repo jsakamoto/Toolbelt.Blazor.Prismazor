@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Sample &amp; Test &copy; &#169; &#xA9;</title>
+  <style>
+    body { color: #333; font-family: "Segoe UI", sans-serif; }
+    .note::before { content: "\201C"; }
+  </style>
+  <script type="text/javascript">
+    const greet = (name) => `Hello, ${name}!`;
+    if (a < b && c > d) { console.log(greet("world")); }
+  </script>
+</head>
+<body class="main" data-id='42' hidden>
+  <!-- A comment -->
+  <p style="color: red; margin: 0">Text with <b>bold</b> and <a href="https://example.com?a=1&b=2">a link</a>.</p>
+  <img src="logo.png" alt="Logo" />
+  <![CDATA[ some <raw> data ]]>
+  <?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <svg:rect xmlns:svg="http://www.w3.org/2000/svg" width="10"/>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<PageTitle>Static SSR - Toolbelt.Blazor.Prismazor</PageTitle>
+
+<h1>Static SSR</h1>
+
+<p>This page uses static server-side rendering. The HTML from the server is already highlighted, and no script runs for it.</p>
+
+@foreach (var sample in SampleCodes.All)
+{
+    <h2>@sample.Title</h2>
+    <CodeBlock Code="@sample.Code" Language="@sample.Grammar" />
+}

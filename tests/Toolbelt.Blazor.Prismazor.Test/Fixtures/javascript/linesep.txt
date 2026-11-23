@@ -1,0 +1,3 @@
+// line separator then code
+var a = 1; /* blockcomment */ var b = " nbsp";
+var r = /a.b/;

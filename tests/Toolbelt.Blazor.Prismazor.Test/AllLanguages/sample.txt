@@ -1,0 +1,17 @@
+// line comment
+# hash comment
+/* block comment */
+<!-- markup comment -->
+-- sql comment
+%% percent comment
+if (x == 1 && y != 2) { return "str" + 'c' + 0x1F + 3.14e5 + @name + $var; }
+class Foo<T> extends Bar implements Baz { public static void main(String[] args) {} }
+def foo(a, b=2): return a ** b  # python
+function f(a) { var s = `tpl ${a}`; return /re+/g.test(s) ? null : undefined; }
+SELECT name, COUNT(*) FROM users WHERE id IN (1, 2) GROUP BY name;
+<div class="a" id='b'>text &amp; <b>bold</b></div>
+{{ value | filter }} {% if x %}y{% endif %} <?php echo $a; ?> <% code %> [% tt %]
+a { color: #fff; margin: 0 auto; } @media (max-width: 10px) { .b:hover { x: url(a.png) } }
+https://example.com/path?query=1#hash user@example.com 2024-01-02T03:04:05Z
+let x = [1, 2, 3].map(n => n * 2); const { a, b } = obj; x ??= y?.z;
+"""triple""" '''triple''' <<<HEREDOC

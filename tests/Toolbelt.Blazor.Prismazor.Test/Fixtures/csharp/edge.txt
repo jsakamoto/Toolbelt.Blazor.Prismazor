@@ -1,0 +1,16 @@
+#region Preprocessor
+#if DEBUG && !RELEASE
+#define TRACE
+#endif
+#endregion
+var unicode = "日本語の文字列 \"escaped\"";
+var 名前 = new { Value = 1 };
+int @class = 0b1010_0101;
+long big = 123_456L; ulong u = 42UL; float f = 3.14f; decimal m = 1.0m;
+unsafe { int* p = &@class; *p = sizeof(int); }
+checked { var x = typeof(List<>); }
+string s = $$"""
+    { "json": {{@class}} }
+    """;
+// Unterminated string at the end
+var broken = "abc

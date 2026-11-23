@@ -1,0 +1,8 @@
+{namespace examples}
+
+/** Greets a person. */
+{template .hello}
+  {@param name: string}
+  <p>Hello, {$name}!</p>
+  {literal}{not parsed}{/literal}
+{/template}

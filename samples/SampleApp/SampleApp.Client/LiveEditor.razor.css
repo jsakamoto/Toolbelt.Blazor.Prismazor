@@ -1,0 +1,14 @@
+.editor {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editor select {
+    width: fit-content;
+}
+
+.editor textarea {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+}

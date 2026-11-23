@@ -1,0 +1,6 @@
+/**
+ * Adds two numbers.
+ * @param {number} a The first number.
+ * @returns {number} The sum.
+ */
+function add(a, b) { return a + b; }

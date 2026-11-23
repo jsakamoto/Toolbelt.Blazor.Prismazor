@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1><?php echo $title; ?></h1>
+<?php
+// a comment
+function greet(string $name): string {
+    return "Hello, {$name}!";
+}
+foreach ($items as $item) { echo $item['name'], PHP_EOL; }
+?>
+<p><?= htmlspecialchars($text) ?></p>
+</body>
+</html>

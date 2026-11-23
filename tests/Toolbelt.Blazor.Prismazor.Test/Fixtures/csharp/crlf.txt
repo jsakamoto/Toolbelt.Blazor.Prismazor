@@ -1,0 +1,7 @@
+using System;
+// Comment with CRLF
+class A
+{
+    string s = "x"; // trailing
+    char c = '';
+}

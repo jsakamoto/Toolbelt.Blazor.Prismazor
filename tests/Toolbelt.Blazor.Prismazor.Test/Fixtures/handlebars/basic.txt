@@ -1,0 +1,6 @@
+<ul>
+{{#each people}}
+  <li>{{this}} {{{raw}}}</li>
+{{/each}}
+</ul>
+{{! a comment }}
