@@ -7,7 +7,7 @@
     <div class="container">
         <h2>Try it</h2>
         <p class="lead">
-            Pick a language and a theme. The preview is highlighted by Prismazor right in your browser,
+            Pick a language and a theme. The preview is highlighted by Prismizor right in your browser,
             and you can copy the code that makes the same result.
         </p>
 
@@ -22,7 +22,7 @@
                         }
                     </select>
                     <p class="field-note">
-                        Here you can pick from @PlaygroundLanguage.All.Count popular languages. Prismazor itself supports
+                        Here you can pick from @PlaygroundLanguage.All.Count popular languages. Prismizor itself supports
                         <a href="https://prismjs.com/#supported-languages">all 288 languages of Prism.js</a>.
                     </p>
                 </div>
@@ -52,24 +52,24 @@
 
         <div class="usage">
             <h3>1. Add the theme CSS file</h3>
-            <CopyableCode Code="@this.CssSnippet" Grammar="@PrismazorLanguages.Markup" />
+            <CopyableCode Code="@this.CssSnippet" Grammar="@PrismizorLanguages.Markup" />
 
             <h3>2. Use the CodeBlock component</h3>
-            <CopyableCode Code="@this.RazorSnippet" Grammar="@PrismazorLanguages.Cshtml" />
+            <CopyableCode Code="@this.RazorSnippet" Grammar="@PrismizorLanguages.Cshtml" />
         </div>
     </div>
 </section>
 
 @code {
-    private const string LanguageStorageKey = "prismazor-playground-language";
+    private const string LanguageStorageKey = "prismizor-playground-language";
 
-    private const string ThemeStorageKey = "prismazor-playground-theme";
+    private const string ThemeStorageKey = "prismizor-playground-theme";
 
     private PlaygroundLanguage language = PlaygroundLanguage.Default;
 
     private string CssSnippet => $"""<link rel="stylesheet" href="{this.ThemeState.Theme.Href}" />""";
 
-    private string RazorSnippet => $"""<CodeBlock Code="@code" Language="@PrismazorLanguages.{this.language.PropertyName}" />""";
+    private string RazorSnippet => $"""<CodeBlock Code="@code" Language="@PrismizorLanguages.{this.language.PropertyName}" />""";
 
     protected override void OnInitialized() => this.ThemeState.Changed += this.OnThemeChanged;
 

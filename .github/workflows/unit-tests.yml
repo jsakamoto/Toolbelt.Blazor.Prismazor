@@ -25,4 +25,4 @@ jobs:
 
       # Perform unit tests
       - name: Perform unit tests
-        run: dotnet test --project ./tests/Toolbelt.Blazor.Prismazor.Test/Toolbelt.Blazor.Prismazor.Test.csproj --output detailed
+        run: dotnet test --project ./tests/Toolbelt.Blazor.Prismizor.Test/Toolbelt.Blazor.Prismizor.Test.csproj --output detailed

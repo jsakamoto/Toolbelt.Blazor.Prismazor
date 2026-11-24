@@ -1,7 +1,7 @@
 namespace HomePage.Data;
 
 /// <summary>
-/// One of the theme CSS files that the Prismazor package includes.
+/// One of the theme CSS files that the Prismizor package includes.
 /// </summary>
 public sealed record PrismTheme(string Id, string DisplayName)
 {
@@ -19,5 +19,5 @@ public sealed record PrismTheme(string Id, string DisplayName)
         new("prism-twilight", "Twilight"),
     ];
 
-    public string Href => $"_content/Toolbelt.Blazor.Prismazor/themes/{this.Id}.min.css";
+    public string Href => $"_content/Toolbelt.Blazor.Prismizor/themes/{this.Id}.min.css";
 }

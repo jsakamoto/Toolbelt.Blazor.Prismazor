@@ -1,4 +1,4 @@
-using Toolbelt.Blazor.Prismazor;
+using Toolbelt.Blazor.Prismizor;
 
 namespace HomePage.Data;
 
@@ -6,7 +6,7 @@ namespace HomePage.Data;
 /// A language that the playground offers, with a short example of code.
 /// </summary>
 /// <param name="DisplayName">The name in the drop-down list.</param>
-/// <param name="PropertyName">The name of the property of <see cref="PrismazorLanguages"/>, which is shown in the usage example.</param>
+/// <param name="PropertyName">The name of the property of <see cref="PrismizorLanguages"/>, which is shown in the usage example.</param>
 /// <param name="Grammar">The grammar of the language.</param>
 /// <param name="Code">The example code.</param>
 public sealed record PlaygroundLanguage(string DisplayName, string PropertyName, Grammar Grammar, string Code)
@@ -15,7 +15,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
 
     public static IReadOnlyList<PlaygroundLanguage> All { get; } =
     [
-        new("C#", nameof(PrismazorLanguages.CSharp), PrismazorLanguages.CSharp, """
+        new("C#", nameof(PrismizorLanguages.CSharp), PrismizorLanguages.CSharp, """
             using System.Linq;
 
             namespace Demo;
@@ -35,7 +35,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Razor", nameof(PrismazorLanguages.Cshtml), PrismazorLanguages.Cshtml, """
+        new("Razor", nameof(PrismizorLanguages.Cshtml), PrismizorLanguages.Cshtml, """
             @page "/counter"
 
             <h1>Counter</h1>
@@ -49,7 +49,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("F#", nameof(PrismazorLanguages.Fsharp), PrismazorLanguages.Fsharp, """
+        new("F#", nameof(PrismizorLanguages.Fsharp), PrismizorLanguages.Fsharp, """
             open System
 
             type Shape =
@@ -65,7 +65,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             |> List.iter (fun s -> printfn "%f" (area s))
             """),
 
-        new("Visual Basic", nameof(PrismazorLanguages.VisualBasic), PrismazorLanguages.VisualBasic, """
+        new("Visual Basic", nameof(PrismizorLanguages.VisualBasic), PrismizorLanguages.VisualBasic, """
             Imports System
 
             Module Program
@@ -78,7 +78,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             End Module
             """),
 
-        new("HTML", nameof(PrismazorLanguages.Markup), PrismazorLanguages.Markup, """
+        new("HTML", nameof(PrismizorLanguages.Markup), PrismizorLanguages.Markup, """
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -93,7 +93,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             </html>
             """),
 
-        new("CSS", nameof(PrismazorLanguages.Css), PrismazorLanguages.Css, """
+        new("CSS", nameof(PrismizorLanguages.Css), PrismizorLanguages.Css, """
             :root { --accent: #512bd4; }
 
             .card {
@@ -108,7 +108,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("SCSS", nameof(PrismazorLanguages.Scss), PrismazorLanguages.Scss, """
+        new("SCSS", nameof(PrismizorLanguages.Scss), PrismizorLanguages.Scss, """
             $accent: #512bd4;
 
             @mixin card($radius: 4px) {
@@ -123,7 +123,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("JavaScript", nameof(PrismazorLanguages.JavaScript), PrismazorLanguages.JavaScript, """
+        new("JavaScript", nameof(PrismizorLanguages.JavaScript), PrismizorLanguages.JavaScript, """
             const sum = (a, b) => a + b;
 
             async function load(url) {
@@ -135,7 +135,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             console.log(sum(1, 2), /^\d+$/.test("42"));
             """),
 
-        new("TypeScript", nameof(PrismazorLanguages.Typescript), PrismazorLanguages.Typescript, """
+        new("TypeScript", nameof(PrismizorLanguages.Typescript), PrismizorLanguages.Typescript, """
             interface User {
               id: number;
               name: string;
@@ -149,7 +149,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             users.forEach(u => console.log(greet(u)));
             """),
 
-        new("JSX", nameof(PrismazorLanguages.Jsx), PrismazorLanguages.Jsx, """
+        new("JSX", nameof(PrismizorLanguages.Jsx), PrismizorLanguages.Jsx, """
             function App({ items }) {
               return (
                 <ul className="list">
@@ -159,9 +159,9 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("JSON", nameof(PrismazorLanguages.Json), PrismazorLanguages.Json, """
+        new("JSON", nameof(PrismizorLanguages.Json), PrismizorLanguages.Json, """
             {
-              "name": "Prismazor",
+              "name": "Prismizor",
               "version": "1.0.0",
               "languages": 288,
               "themes": ["prism", "prism-okaidia"],
@@ -169,7 +169,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("YAML", nameof(PrismazorLanguages.Yaml), PrismazorLanguages.Yaml, """
+        new("YAML", nameof(PrismizorLanguages.Yaml), PrismizorLanguages.Yaml, """
             name: unit tests
             on:
               push:
@@ -182,9 +182,9 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
                   - run: dotnet test
             """),
 
-        new("TOML", nameof(PrismazorLanguages.Toml), PrismazorLanguages.Toml, """
+        new("TOML", nameof(PrismizorLanguages.Toml), PrismizorLanguages.Toml, """
             [package]
-            name = "prismazor"
+            name = "prismizor"
             version = "1.0.0"
             authors = ["Ann <ann@example.com>"]
 
@@ -192,20 +192,20 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             serde = { version = "1.0", features = ["derive"] }
             """),
 
-        new("Markdown", nameof(PrismazorLanguages.Markdown), PrismazorLanguages.Markdown, """"
-            # Prismazor
+        new("Markdown", nameof(PrismizorLanguages.Markdown), PrismizorLanguages.Markdown, """"
+            # Prismizor
 
             Highlight code with **no JavaScript**.
 
             - It works with Blazor Server and WebAssembly.
-            - See the [project page](https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor).
+            - See the [project page](https://github.com/jsakamoto/Toolbelt.Blazor.Prismizor).
 
             ```csharp
-            Console.WriteLine("Hello, Prismazor!");
+            Console.WriteLine("Hello, Prismizor!");
             ```
             """"),
 
-        new("SQL", nameof(PrismazorLanguages.Sql), PrismazorLanguages.Sql, """
+        new("SQL", nameof(PrismizorLanguages.Sql), PrismizorLanguages.Sql, """
             SELECT u.name, COUNT(o.id) AS orders
             FROM users u
             LEFT JOIN orders o ON o.user_id = u.id
@@ -214,7 +214,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             ORDER BY orders DESC;
             """),
 
-        new("GraphQL", nameof(PrismazorLanguages.Graphql), PrismazorLanguages.Graphql, """
+        new("GraphQL", nameof(PrismizorLanguages.Graphql), PrismizorLanguages.Graphql, """
             query GetUser($id: ID!) {
               user(id: $id) {
                 name
@@ -227,7 +227,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Python", nameof(PrismazorLanguages.Python), PrismazorLanguages.Python, """
+        new("Python", nameof(PrismizorLanguages.Python), PrismizorLanguages.Python, """
             from dataclasses import dataclass
 
             @dataclass
@@ -241,7 +241,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             print(distance(Point(0, 0), Point(3, 4)))  # 5.0
             """),
 
-        new("Java", nameof(PrismazorLanguages.Java), PrismazorLanguages.Java, """
+        new("Java", nameof(PrismizorLanguages.Java), PrismizorLanguages.Java, """
             import java.util.List;
 
             public class Hello {
@@ -254,7 +254,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Kotlin", nameof(PrismazorLanguages.Kotlin), PrismazorLanguages.Kotlin, """
+        new("Kotlin", nameof(PrismizorLanguages.Kotlin), PrismizorLanguages.Kotlin, """
             data class User(val name: String, val age: Int)
 
             fun main() {
@@ -264,7 +264,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Swift", nameof(PrismazorLanguages.Swift), PrismazorLanguages.Swift, """
+        new("Swift", nameof(PrismizorLanguages.Swift), PrismizorLanguages.Swift, """
             struct User {
                 let name: String
                 var age: Int
@@ -276,7 +276,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Go", nameof(PrismazorLanguages.Go), PrismazorLanguages.Go, """
+        new("Go", nameof(PrismizorLanguages.Go), PrismizorLanguages.Go, """
             package main
 
             import "fmt"
@@ -288,7 +288,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Rust", nameof(PrismazorLanguages.Rust), PrismazorLanguages.Rust, """
+        new("Rust", nameof(PrismizorLanguages.Rust), PrismizorLanguages.Rust, """
             use std::collections::HashMap;
 
             fn main() {
@@ -300,7 +300,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("C", nameof(PrismazorLanguages.C), PrismazorLanguages.C, """
+        new("C", nameof(PrismizorLanguages.C), PrismizorLanguages.C, """
             #include <stdio.h>
 
             int main(void) {
@@ -313,7 +313,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("C++", nameof(PrismazorLanguages.Cpp), PrismazorLanguages.Cpp, """
+        new("C++", nameof(PrismizorLanguages.Cpp), PrismizorLanguages.Cpp, """
             #include <iostream>
             #include <vector>
 
@@ -326,7 +326,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("PHP", nameof(PrismazorLanguages.Php), PrismazorLanguages.Php, """
+        new("PHP", nameof(PrismizorLanguages.Php), PrismizorLanguages.Php, """
             <?php
             declare(strict_types=1);
 
@@ -337,7 +337,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             echo greet('Ann'), PHP_EOL;
             """),
 
-        new("Ruby", nameof(PrismazorLanguages.Ruby), PrismazorLanguages.Ruby, """
+        new("Ruby", nameof(PrismizorLanguages.Ruby), PrismizorLanguages.Ruby, """
             class Greeter
               def initialize(name)
                 @name = name
@@ -351,7 +351,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             Greeter.new("Ann").greet
             """),
 
-        new("Dart", nameof(PrismazorLanguages.Dart), PrismazorLanguages.Dart, """
+        new("Dart", nameof(PrismizorLanguages.Dart), PrismizorLanguages.Dart, """
             class Counter {
               int _count = 0;
 
@@ -365,7 +365,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             }
             """),
 
-        new("Lua", nameof(PrismazorLanguages.Lua), PrismazorLanguages.Lua, """
+        new("Lua", nameof(PrismizorLanguages.Lua), PrismizorLanguages.Lua, """
             local function fib(n)
               if n < 2 then return n end
               return fib(n - 1) + fib(n - 2)
@@ -376,7 +376,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             end
             """),
 
-        new("Bash", nameof(PrismazorLanguages.Bash), PrismazorLanguages.Bash, """
+        new("Bash", nameof(PrismizorLanguages.Bash), PrismizorLanguages.Bash, """
             #!/bin/bash
             set -e
 
@@ -386,7 +386,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             done
             """),
 
-        new("PowerShell", nameof(PrismazorLanguages.Powershell), PrismazorLanguages.Powershell, """
+        new("PowerShell", nameof(PrismizorLanguages.Powershell), PrismizorLanguages.Powershell, """
             param([string]$Path = ".")
 
             Get-ChildItem -Path $Path -Filter *.cs -Recurse |
@@ -394,7 +394,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
                 ForEach-Object { Write-Host "$($_.Name) is large" }
             """),
 
-        new("Dockerfile", nameof(PrismazorLanguages.Docker), PrismazorLanguages.Docker, """
+        new("Dockerfile", nameof(PrismizorLanguages.Docker), PrismizorLanguages.Docker, """
             FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
             WORKDIR /src
             COPY . .
@@ -405,7 +405,7 @@ public sealed record PlaygroundLanguage(string DisplayName, string PropertyName,
             ENTRYPOINT ["dotnet", "/app/App.dll"]
             """),
 
-        new("Diff", nameof(PrismazorLanguages.Diff), PrismazorLanguages.Diff, """
+        new("Diff", nameof(PrismizorLanguages.Diff), PrismizorLanguages.Diff, """
             --- a/Program.cs
             +++ b/Program.cs
             @@ -1,5 +1,5 @@

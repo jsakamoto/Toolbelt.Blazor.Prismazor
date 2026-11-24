@@ -1,4 +1,4 @@
-using Toolbelt.Blazor.Prismazor;
+using Toolbelt.Blazor.Prismizor;
 
 namespace SampleApp.Client;
 
@@ -12,7 +12,7 @@ public static class SampleCodes
     /// </summary>
     public static IReadOnlyList<(string Title, Grammar Grammar, string Code)> All { get; } =
     [
-        ("C#", PrismazorLanguages.CSharp,
+        ("C#", PrismizorLanguages.CSharp,
             """
             public record Person(string Name, int Age)
             {
@@ -20,21 +20,21 @@ public static class SampleCodes
                 public string Greet() => $"Hello, {this.Name}! You are {this.Age} years old.";
             }
             """),
-        ("HTML", PrismazorLanguages.Markup,
+        ("HTML", PrismizorLanguages.Markup,
             """
             <!DOCTYPE html>
             <p class="note">Tom &amp; Jerry</p>
             <script>console.log(`sum: ${1 + 2}`);</script>
             <style>p.note { color: #c00; }</style>
             """),
-        ("CSS", PrismazorLanguages.Css,
+        ("CSS", PrismizorLanguages.Css,
             """
             @media (prefers-color-scheme: dark) {
               :root { --bg: #1e1e1e; }
             }
             .card:hover::after { content: "\2192"; margin: 0 auto !important; }
             """),
-        ("JavaScript", PrismazorLanguages.JavaScript,
+        ("JavaScript", PrismizorLanguages.JavaScript,
             """
             const re = /^[a-z]+\d{2,}$/i;
             export async function load(url) {

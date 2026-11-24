@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Prismazor is a C# port of Prism.js for Blazor. It highlights code with no JavaScript, and it makes the same HTML as Prism.js." />
-    <title>Prismazor - A Port of Prism.js to Blazor</title>
+    <meta name="description" content="Prismizor is a C# port of Prism.js for Blazor. It highlights code with no JavaScript, and it makes the same HTML as Prism.js." />
+    <title>Prismizor - A Port of Prism.js to Blazor</title>
     <base href="/" />
     <link rel="icon" type="image/png" href="nupkg-icon.png" />
     <link rel="preload" id="webassembly" />
@@ -16,7 +16,7 @@
         // This is not JS interop. It applies the saved color mode before the first paint, to avoid a flash of the wrong color.
         (() => {
             try {
-                const mode = localStorage.getItem("prismazor-color-mode");
+                const mode = localStorage.getItem("prismizor-color-mode");
                 if (mode === "light" || mode === "dark") document.documentElement.setAttribute("data-theme", mode);
             } catch { }
         })();

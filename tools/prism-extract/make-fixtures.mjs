@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createEnvFor } from './prism-env.mjs';
 
-const fixturesDir = fileURLToPath(new URL('../../tests/Toolbelt.Blazor.Prismazor.Test/Fixtures/', import.meta.url));
+const fixturesDir = fileURLToPath(new URL('../../tests/Toolbelt.Blazor.Prismizor.Test/Fixtures/', import.meta.url));
 let count = 0;
 for (const language of await readdir(fixturesDir)) {
   // The environment is the same as the one the grammar is extracted from.

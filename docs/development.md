@@ -4,18 +4,18 @@
 
 | Path | Content |
 |---|---|
-| `src/Toolbelt.Blazor.Prismazor/` | The library itself (a Razor class library) |
-| `src/Toolbelt.Blazor.Prismazor/Languages/*.g.cs` | The language definitions that the generator makes. Do not edit them by hand. |
-| `src/Toolbelt.Blazor.Prismazor/Hooks/` | The hooks of the languages. They are ports of the hooks that the components of PrismJS add. |
-| `src/Toolbelt.Blazor.Prismazor/wwwroot/themes/` | The theme CSS files of PrismJS (copied by `npm run themes`) |
+| `src/Toolbelt.Blazor.Prismizor/` | The library itself (a Razor class library) |
+| `src/Toolbelt.Blazor.Prismizor/Languages/*.g.cs` | The language definitions that the generator makes. Do not edit them by hand. |
+| `src/Toolbelt.Blazor.Prismizor/Hooks/` | The hooks of the languages. They are ports of the hooks that the components of PrismJS add. |
+| `src/Toolbelt.Blazor.Prismizor/wwwroot/themes/` | The theme CSS files of PrismJS (copied by `npm run themes`) |
 | `tools/prism-extract/` | Node scripts. They extract the grammars from PrismJS, make the expected values for the tests, and copy the themes. |
 | `tools/prism-extract/prism-env.mjs` | The common module that makes an isolated PrismJS environment |
 | `tools/prism-extract/languages.json` | The list of the languages to generate (the Prism language ID and the C# class name). It is made by `npm run languages`. |
 | `tools/prism-extract/out/grammars.json` | The extracted grammars (committed) |
-| `tools/Toolbelt.Blazor.Prismazor.Generator/` | The console app that makes C# from grammars.json. It also converts JS regular expressions to .NET. |
-| `tests/Toolbelt.Blazor.Prismazor.Test/` | NUnit tests (MTP) |
-| `tests/Toolbelt.Blazor.Prismazor.Test/Fixtures/<language ID>/` | The input `*.txt` and the PrismJS output `*.expected.html` |
-| `tests/Toolbelt.Blazor.Prismazor.Test/AllLanguages/` | The output of PrismJS (`expected.json`) when the same input (`sample.txt`) is given to all languages |
+| `tools/Toolbelt.Blazor.Prismizor.Generator/` | The console app that makes C# from grammars.json. It also converts JS regular expressions to .NET. |
+| `tests/Toolbelt.Blazor.Prismizor.Test/` | NUnit tests (MTP) |
+| `tests/Toolbelt.Blazor.Prismizor.Test/Fixtures/<language ID>/` | The input `*.txt` and the PrismJS output `*.expected.html` |
+| `tests/Toolbelt.Blazor.Prismizor.Test/AllLanguages/` | The output of PrismJS (`expected.json`) when the same input (`sample.txt`) is given to all languages |
 | `samples/SampleApp/` | A Blazor Web App (Server and Client) to check the behavior |
 | `samples/HomePage/` | The home page of the library, a Blazor WebAssembly standalone app for GitHub Pages (net11.0). The `gh-pages.yml` workflow publishes it. |
 | `.assets/nupkg-icon.png` | The package icon. The home page shows it too. |
@@ -26,16 +26,16 @@ To update PrismJS, first change the version in `tools/prism-extract/package.json
 
 1. Run `npm run languages` in `tools/prism-extract` to make `languages.json` again. If there is a language that the generator cannot convert, you can remove it from the list by writing it with the reason in `unsupported` of `make-language-list.mjs`.
 2. Run `npm run extract` in `tools/prism-extract`.
-3. Run `dotnet run --project tools/Toolbelt.Blazor.Prismazor.Generator` in the root of the repository.
+3. Run `dotnet run --project tools/Toolbelt.Blazor.Prismizor.Generator` in the root of the repository.
    - The generator stops with `NotSupportedException` if there is a regular expression that cannot be converted (for example, the `u` or `y` flag, or a named group).
    - It also stops if the component of a language adds a before-tokenize or after-tokenize hook and the port of it does not exist. Write the port in `Hooks/`, and add the language ID to the `PortedHooks` table of the generator.
-4. Put a sample `*.txt` in `tests/Toolbelt.Blazor.Prismazor.Test/Fixtures/<language ID>/`, and run `npm run fixtures` in `tools/prism-extract` to make the expected values. To make the expected values for all languages again, run `npm run all-languages-fixture`.
+4. Put a sample `*.txt` in `tests/Toolbelt.Blazor.Prismizor.Test/Fixtures/<language ID>/`, and run `npm run fixtures` in `tools/prism-extract` to make the expected values. To make the expected values for all languages again, run `npm run all-languages-fixture`.
 5. Run the tests.
 
 ## Tests
 
 ```
-cd tests/Toolbelt.Blazor.Prismazor.Test
+cd tests/Toolbelt.Blazor.Prismizor.Test
 dotnet test
 ```
 

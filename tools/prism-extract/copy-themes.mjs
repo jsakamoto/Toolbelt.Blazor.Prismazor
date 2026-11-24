@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
 const prismDir = path.dirname(require.resolve('prismjs/package.json'));
-const libraryDir = fileURLToPath(new URL('../../src/Toolbelt.Blazor.Prismazor/', import.meta.url));
+const libraryDir = fileURLToPath(new URL('../../src/Toolbelt.Blazor.Prismizor/', import.meta.url));
 const themesDir = path.join(libraryDir, 'wwwroot', 'themes');
 
 await mkdir(themesDir, { recursive: true });

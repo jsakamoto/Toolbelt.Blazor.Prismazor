@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { createEnvFor } from './prism-env.mjs';
 
-const dir = fileURLToPath(new URL('../../tests/Toolbelt.Blazor.Prismazor.Test/AllLanguages/', import.meta.url));
+const dir = fileURLToPath(new URL('../../tests/Toolbelt.Blazor.Prismizor.Test/AllLanguages/', import.meta.url));
 const sample = await readFile(`${dir}sample.txt`, 'utf8');
 const languages = JSON.parse(await readFile(new URL('./languages.json', import.meta.url), 'utf8'));
 

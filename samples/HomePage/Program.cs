@@ -2,7 +2,7 @@ using HomePage;
 using HomePage.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Toolbelt.Blazor.Prismazor;
+using Toolbelt.Blazor.Prismizor;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -19,9 +19,9 @@ static void ConfigureServices(IServiceCollection services)
     services.AddScoped<ThemeState>();
 
     // The code blocks in Markdown are highlighted only with the languages that are registered here.
-    PrismazorLanguageRegistry.Register(PrismazorLanguages.CSharp, "cs");
-    PrismazorLanguageRegistry.Register(PrismazorLanguages.JavaScript, "js");
-    PrismazorLanguageRegistry.Register(PrismazorLanguages.Css);
-    PrismazorLanguageRegistry.Register(PrismazorLanguages.Json);
-    PrismazorLanguageRegistry.Register(PrismazorLanguages.Bash, "sh");
+    PrismizorLanguageRegistry.Register(PrismizorLanguages.CSharp, "cs");
+    PrismizorLanguageRegistry.Register(PrismizorLanguages.JavaScript, "js");
+    PrismizorLanguageRegistry.Register(PrismizorLanguages.Css);
+    PrismizorLanguageRegistry.Register(PrismizorLanguages.Json);
+    PrismizorLanguageRegistry.Register(PrismizorLanguages.Bash, "sh");
 }

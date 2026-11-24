@@ -9,38 +9,38 @@
         <ol class="steps">
             <li>
                 <h3>Add the package</h3>
-                <CopyableCode Code="@install" Grammar="@PrismazorLanguages.Bash" />
+                <CopyableCode Code="@install" Grammar="@PrismizorLanguages.Bash" />
             </li>
             <li>
                 <h3>Open the namespace in <code>_Imports.razor</code></h3>
-                <CopyableCode Code="@usingLine" Grammar="@PrismazorLanguages.Cshtml" />
+                <CopyableCode Code="@usingLine" Grammar="@PrismizorLanguages.Cshtml" />
             </li>
             <li>
                 <h3>Add a link to a theme CSS file</h3>
                 <p>Put it in <code>App.razor</code> or <code>index.html</code>. This is the theme that you pick in "Try it" above, and eight themes are included.</p>
                 <p>
-                    You are not limited to them. Prismazor makes the same HTML as Prism.js, so any theme CSS file for Prism.js works as it is,
+                    You are not limited to them. Prismizor makes the same HTML as Prism.js, so any theme CSS file for Prism.js works as it is,
                     such as the extra themes in <a class="with-icon" href="https://github.com/PrismJS/prism-themes"><BrandIcon Kind="BrandIconKind.PrismJs" />prism-themes</a>. Just link the CSS file in the same way.
                 </p>
-                <CopyableCode Code="@this.LinkSnippet" Grammar="@PrismazorLanguages.Markup" />
+                <CopyableCode Code="@this.LinkSnippet" Grammar="@PrismizorLanguages.Markup" />
             </li>
             <li>
                 <h3>Use the <code>CodeBlock</code> component</h3>
-                <CopyableCode Code="@usage" Grammar="@PrismazorLanguages.Cshtml" />
+                <CopyableCode Code="@usage" Grammar="@PrismizorLanguages.Cshtml" />
             </li>
         </ol>
 
         <p class="more">
             To highlight the code blocks in Markdown, or to use the highlighter without the component, see the
-            <a class="with-icon" href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismazor#readme"><BrandIcon Kind="BrandIconKind.GitHub" />README</a>.
+            <a class="with-icon" href="https://github.com/jsakamoto/Toolbelt.Blazor.Prismizor#readme"><BrandIcon Kind="BrandIconKind.GitHub" />README</a>.
         </p>
     </div>
 </section>
 
 @code {
-    private const string install = "dotnet add package Toolbelt.Blazor.Prismazor";
+    private const string install = "dotnet add package Toolbelt.Blazor.Prismizor";
 
-    private const string usingLine = "@using Toolbelt.Blazor.Prismazor";
+    private const string usingLine = "@using Toolbelt.Blazor.Prismizor";
 
     private string LinkSnippet => $"""<link rel="stylesheet" href="{this.ThemeState.Theme.Href}" />""";
 
@@ -49,7 +49,7 @@
             private const string code = "var x = 1;";
         }
 
-        <CodeBlock Code="@code" Language="@PrismazorLanguages.CSharp" />
+        <CodeBlock Code="@code" Language="@PrismizorLanguages.CSharp" />
         """;
 
     protected override void OnInitialized() => this.ThemeState.Changed += this.OnThemeChanged;

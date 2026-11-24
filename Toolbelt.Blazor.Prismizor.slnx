@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Toolbelt.Blazor.Prismizor/Toolbelt.Blazor.Prismizor.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Toolbelt.Blazor.Prismizor.Test/Toolbelt.Blazor.Prismizor.Test.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/Toolbelt.Blazor.Prismizor.Generator/Toolbelt.Blazor.Prismizor.Generator.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/SampleApp/SampleApp/SampleApp.csproj" />
+    <Project Path="samples/SampleApp/SampleApp.Client/SampleApp.Client.csproj" />
+    <Project Path="samples/HomePage/HomePage.csproj" />
+  </Folder>
+</Solution>

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Toolbelt.Blazor.Prismazor\Toolbelt.Blazor.Prismazor.csproj" />
+    <ProjectReference Include="..\..\..\src\Toolbelt.Blazor.Prismizor\Toolbelt.Blazor.Prismizor.csproj" />
   </ItemGroup>
 
 </Project>

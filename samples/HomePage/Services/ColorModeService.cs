@@ -19,7 +19,7 @@ public enum ColorMode
 public sealed class ColorModeService(IJSRuntime js)
 {
     // The script in index.html reads the same key to avoid a flash of the wrong color.
-    private const string StorageKey = "prismazor-color-mode";
+    private const string StorageKey = "prismizor-color-mode";
 
     public ColorMode Mode { get; private set; } = ColorMode.Auto;
 
