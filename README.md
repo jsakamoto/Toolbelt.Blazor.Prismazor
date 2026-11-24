@@ -20,6 +20,8 @@ A syntax highlighting component for Blazor. It is a C# port of [Prism.js](https:
 > **Note**  
 > This library uses `new Regex(...)` with patterns that are given at run time. If your app already uses it, the library doesn't make your app bigger because of the regular expression engine.
 
+Do you want to see how it looks before you install it? Open [Try it](https://jsakamoto.github.io/Toolbelt.Blazor.Prismizor/#try-it) on the demo site. You can pick a language and a theme, see the result highlighted right in your browser, and copy the code that makes the same result. When you are ready to use it in your own project, read on.
+
 ## Supported Blazor versions
 
 This library supports ASP.NET Core Blazor version 10.0 and 11.0.
@@ -47,7 +49,7 @@ dotnet add package Toolbelt.Blazor.Prismizor
 <link rel="stylesheet" href="_content/Toolbelt.Blazor.Prismizor/themes/prism.min.css" />
 ```
 
-These themes are available. `prism`, `prism-coy`, `prism-dark`, `prism-funky`, `prism-okaidia`, `prism-solarizedlight`, `prism-tomorrow`, and `prism-twilight`. Each file name ends with `.min.css`.
+These themes are available. `prism`, `prism-coy`, `prism-dark`, `prism-funky`, `prism-okaidia`, `prism-solarizedlight`, `prism-tomorrow`, and `prism-twilight`. Each file name ends with `.min.css`. If you can't decide which one to use, you can compare them on the [Try it](https://jsakamoto.github.io/Toolbelt.Blazor.Prismizor/#try-it) page.
 
 To switch the theme by the color scheme of the browser, use the `media` attribute.
 

@@ -12,7 +12,7 @@
     <Authors>J.Sakamoto</Authors>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jsakamoto/Toolbelt.Blazor.Prismizor/</RepositoryUrl>
-    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <PackageProjectUrl>https://jsakamoto.github.io/Toolbelt.Blazor.Prismizor/</PackageProjectUrl>
     <Description>A syntax highlighting component for Blazor, which is a C# port of Prism.js. It has no JavaScript, and it works with Blazor Server, WebAssembly, and static SSR.</Description>
     <PackageTags>blazor,syntax-highlighting,prism,prismjs,highlighter</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
